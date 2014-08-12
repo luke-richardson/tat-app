@@ -1,23 +1,28 @@
 [
     {
-        "artist": "Supakitch",
-        "title": "Elias' script",
+        "artist": {
+            "artistName": "SupaKitch",
+            "artistAvatar": "./testLib/supavatar.jpg"
+
+        },
+        "title": "Ice-nine",
         "artworkUrl": "./testLib/tattt.jpg",
-        "artistAvatar": "./testLib/supavatar.jpg",
-        "stars": 5,
+        "likes": 1024,
         "deposit": 100,
         "fullPrice": 1200,
-        "currency": "eur"
+        "currency": "€"
     }
     ,
     {
-        "artist": "Grace Neutral",
+        "artist": {
+            "artistName": "Grace Neutral",
+            "artistAvatar": "./testLib/graceavatar.jpg"
+        },
         "title": "Lunatic Mandala",
         "artworkUrl": "./testLib/lunaticmandala.jpg",
-        "artistAvatar": "./testLib/graceavatar.jpg",
-        "stars": 5,
+        "likes": 512,
         "deposit": 80,
         "fullPrice": 6000,
-        "currency": "gbp"
+        "currency": "£"
     }
 ]

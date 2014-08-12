@@ -2,14 +2,28 @@
     <ion-content class="has-header padding">
             <div class="card" ng-repeat="card in cards">
                 <div class="item item-avatar">
-                    <img ng-src={{card.artistAvatar}}>
+                    <img ng-src={{card.artist.artistAvatar}}>
 
                     <h2>{{card.title}}</h2>
 
-                    <p>{{card.artist}}</p>
+                    <p>{{card.artist.artistName}}</p>
                 </div>
                 <div class="item item-image">
                     <img ng-src={{card.artworkUrl}}>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" href="#">
+                        <i class="icon ion-thumbsup"></i>
+                        {{card.likes}}
+                    </a>
+                    <a class="tab-item" href="#">
+                        <i class="icon ion-share"></i>
+                        Share
+                    </a>
+                    <a class="tab-item" href="#">
+                        <i class="icon ion-ios7-cart"></i>
+                        {{card.deposit | currency : card.currency}}
+                    </a>
                 </div>
             </div>
         </ion-content>
