@@ -1,0 +1,16 @@
+<ion-view title="Ink.">
+    <ion-content class="has-header padding">
+            <div class="card" ng-repeat="card in cards">
+                <div class="item item-avatar">
+                    <img ng-src={{card.artistAvatar}}>
+
+                    <h2>{{card.title}}</h2>
+
+                    <p>{{card.artist}}</p>
+                </div>
+                <div class="item item-image">
+                    <img ng-src={{card.artworkUrl}}>
+                </div>
+            </div>
+        </ion-content>
+</ion-view>

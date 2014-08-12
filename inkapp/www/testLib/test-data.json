@@ -1,0 +1,23 @@
+[
+    {
+        "artist": "Supakitch",
+        "title": "Elias' script",
+        "artworkUrl": "./testLib/tattt.jpg",
+        "artistAvatar": "./testLib/supavatar.jpg",
+        "stars": 5,
+        "deposit": 100,
+        "fullPrice": 1200,
+        "currency": "eur"
+    }
+    ,
+    {
+        "artist": "Grace Neutral",
+        "title": "Lunatic Mandala",
+        "artworkUrl": "./testLib/lunaticmandala.jpg",
+        "artistAvatar": "./testLib/graceavatar.jpg",
+        "stars": 5,
+        "deposit": 80,
+        "fullPrice": 6000,
+        "currency": "gbp"
+    }
+]
