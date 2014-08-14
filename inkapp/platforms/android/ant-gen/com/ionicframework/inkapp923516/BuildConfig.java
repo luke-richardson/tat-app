@@ -1,0 +1,6 @@
+/** Automatically generated file. DO NOT MODIFY */
+package com.ionicframework.inkapp923516;
+
+public final class BuildConfig {
+    public final static boolean DEBUG = false;
+}

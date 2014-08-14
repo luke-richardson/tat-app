@@ -1,0 +1,37 @@
+[
+    {
+        "artistId": 0,
+        "artistName": "SupaKitch",
+        "artistAvatar": "./testLib/supavatar.jpg",
+        "happyCustomers": 37,
+        "location":"Paris, France",
+        "joinDate":"03/03/2014"
+    }
+    ,
+    {
+        "artistId": 1,
+        "artistName": "Grace Neutral",
+        "artistAvatar": "./testLib/graceavatar.jpg",
+        "happyCustomers": 23,
+        "location":"London, England",
+        "joinDate":"06/06/2014"
+    }
+    ,
+    {
+        "artistId": 2,
+        "artistName": "Scott Campbell",
+        "artistAvatar": "./testLib/campbellavatar.jpg",
+        "happyCustomers": 24,
+        "location":"New York, NY",
+        "joinDate":"06/04/2014"
+    }
+    ,
+    {
+        "artistId": 3,
+        "artistName": "Yann Black",
+        "artistAvatar": "./testLib/yannavatar.jpg",
+        "happyCustomers": 43,
+        "location":"Montreal, Canada",
+        "joinDate":"06/04/2014"
+    }
+]

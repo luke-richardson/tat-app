@@ -1,0 +1,32 @@
+[
+    {
+        "artist": {
+            "artistId" : 0,
+            "artistName": "SupaKitch",
+            "artistAvatar": "./testLib/supavatar.jpg"
+
+        },
+        "artworkId":0,
+        "title": "Ice-nine",
+        "artworkUrl": "./testLib/tattt.jpg",
+        "likes": 1024,
+        "deposit": 100,
+        "fullPrice": 1200,
+        "currency": "€"
+    }
+    ,
+    {
+        "artist": {
+            "artistId" : 1,
+            "artistName": "Grace Neutral",
+            "artistAvatar": "./testLib/graceavatar.jpg"
+        },
+        "artworkId":1,
+        "title": "Lunatic Mandala",
+        "artworkUrl": "./testLib/lunaticmandala.jpg",
+        "likes": 512,
+        "deposit": 80,
+        "fullPrice": 6000,
+        "currency": "£"
+    }
+]

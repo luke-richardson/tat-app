@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directives'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -47,6 +47,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+
+      .state('tab.artist-detail', {
+          url: '/artist/:artistId',
+          views: {
+              'tab-dash': {
+                  templateUrl: 'templates/artist-detail.html',
+                  controller: 'ArtistDetailCtrl'
+              }
+          }
+      })
 
     .state('tab.friends', {
       url: '/friends',

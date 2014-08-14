@@ -1,0 +1,19 @@
+[
+    {
+        "artistId": 0,
+        "artistName": "SupaKitch",
+        "artistAvatar": "./testLib/supavatar.jpg",
+        "happyCustomers": 15,
+        "location":"Paris, France",
+        "joinDate":"03/03/2014"
+    }
+    ,
+    {
+        "artistId": 1,
+        "artistName": "Grace Neutral",
+        "artistAvatar": "./testLib/graceavatar.jpg",
+        "happyCustomers": 0,
+        "location":"London, England",
+        "joinDate":"06/06/2014"
+    }
+]
