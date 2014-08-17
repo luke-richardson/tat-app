@@ -36,6 +36,7 @@
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/index.html \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/js \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/lib \
+/Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/licenses \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/plugins \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/README.md \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/templates \
@@ -45,6 +46,7 @@
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/js/app.js \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/js/controllers.js \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/js/directives.js \
+/Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/js/fastclick.js \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/js/services.js \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/lib/ionic \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/lib/ionic/css \
@@ -115,6 +117,7 @@
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/lib/ionic/scss/ionicons/_ionicons-icons.scss \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/lib/ionic/scss/ionicons/_ionicons-variables.scss \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/lib/ionic/scss/ionicons/ionicons.scss \
+/Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/licenses/LICENSE.txt \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/plugins/com.ionic.keyboard \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/eliascourt/Development/Ink./inkapp/platforms/android/assets/www/plugins/com.ionic.keyboard/www \

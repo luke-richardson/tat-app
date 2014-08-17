@@ -3,7 +3,9 @@ angular.module('ink.services', [])
     .factory('QueryTats', function ($http) {
         var factory = {};
 
-        factory.execute = function(filename, callback){return $http.get(filename).success(callback)};
+        factory.execute = function (filename) {
+            return $http.get(filename)
+        };
 
         return factory;
     })
@@ -11,7 +13,9 @@ angular.module('ink.services', [])
     .factory('QueryArtistById', function ($http) {
         var factory = {};
 
-        factory.execute = function(filename, artistId, callback){return $http.get(filename).success(callback)};
+        factory.execute = function (filename, artistId) {
+            return $http.get(filename)
+        };
 
         return factory;
     })

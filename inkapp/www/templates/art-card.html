@@ -6,7 +6,7 @@
 
         <p>{{artwork.artist.artistName}}</p>
     </a>
-    <a ng-href="#/tab/artist/{{artwork.artist.artistId}}" class="item item-image">
+    <a ng-click="openModal(artwork.artworkUrl)" class="item item-image">
         <img ng-src={{artwork.artworkUrl}}>
     </a>
     <div class="item tabs tabs-secondary tabs-icon-left">

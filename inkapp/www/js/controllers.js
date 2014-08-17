@@ -1,23 +1,44 @@
 angular.module('ink.controllers', [])
 
-    .controller('DashCtrl', ['$scope', 'QueryTats', function ($scope, QueryTats) {
+    .controller('DashCtrl', function ($scope, $ionicLoading, QueryTats) {
+
         $scope.cards = [];
 
-        QueryTats.execute('./testLib/test-data.json', function(data){
-            $scope.cards = data;
+        $ionicLoading.show({
+            content: '<i class="icon ion-loading-c"></i>',
+            animation: 'fade-in',
+            showBackdrop: false,
+            maxWidth: 200,
+            showDelay: 50
         });
 
-    }])
+        QueryTats.execute('./testLib/test-data.json').success(function (data) {
+            $scope.cards = data;
+            $ionicLoading.hide();
+        });
 
-    .controller('ArtistDetailCtrl', function ($scope, $stateParams, QueryArtistById, QueryTats) {
+    })
+
+    .controller('ArtistDetailCtrl', function ($scope, $ionicLoading, $stateParams, QueryArtistById, QueryTats) {
         $scope.artist = {};
         $scope.artistArtworks = [];
 
-        QueryArtistById.execute('./testLib/test-artists.json', $stateParams.artistId, function(data){
+        $ionicLoading.show({
+            content: '<i class="icon ion-loading-c"></i>',
+            animation: 'fade-in',
+            showBackdrop: false,
+            maxWidth: 200,
+            showDelay: 50
+        });
+
+        QueryArtistById.execute('./testLib/test-artists.json', $stateParams.artistId).success(function (data) {
             $scope.artist = data[$stateParams.artistId]; //But really the service should be fetching by artistID - this is for testing.
             $scope.artistPageTitle = $scope.artist.artistName + "'s profile"
-            QueryTats.execute('./testLib/test-data.json', function(data){
-                $scope.artistArtworks = data.filter(function(item){return item.artist.artistId === $scope.artist.artistId});
+            QueryTats.execute('./testLib/test-data.json').success(function (data) {
+                $scope.artistArtworks = data.filter(function (item) {
+                    return item.artist.artistId === $scope.artist.artistId
+                });
+                $ionicLoading.hide();
             });
         });
     })

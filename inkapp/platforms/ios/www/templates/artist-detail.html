@@ -26,6 +26,12 @@
             </a>
         </div>
 
+        <div class="card">
+            <div class="item item-divider" align="center">
+                {{artist.artistName}}'s available artworks
+            </div>
+        </div>
+
         <div ng-repeat="art in artistArtworks">
             <artwork-card artwork=art></artwork-card>
         </div>

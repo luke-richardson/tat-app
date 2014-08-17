@@ -23,3 +23,11 @@
 2014-08-14 21:45:52.957 inkapp[68077:70b] [CDVTimer][TotalPluginStartup] 2.094030ms
 2014-08-14 21:45:53.330 inkapp[68077:70b] Resetting plugins due to page load.
 2014-08-14 21:45:53.726 inkapp[68077:70b] Finished load of: file:///Users/eliascourt/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F695D830-143A-48FB-918C-3848112208B0/inkapp.app/www/index.html#/tab/dash
+2014-08-14 23:11:55.750 inkapp[69882:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-14 23:11:55.816 inkapp[69882:70b] Unlimited access to network resources
+2014-08-14 23:11:56.399 inkapp[69882:70b] [CDVTimer][keyboard] 0.136018ms
+2014-08-14 23:11:56.400 inkapp[69882:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-08-14 23:11:56.401 inkapp[69882:70b] [CDVTimer][statusbar] 0.737011ms
+2014-08-14 23:11:56.402 inkapp[69882:70b] [CDVTimer][TotalPluginStartup] 2.297997ms
+2014-08-14 23:11:56.681 inkapp[69882:70b] Resetting plugins due to page load.
+2014-08-14 23:11:57.069 inkapp[69882:70b] Finished load of: file:///Users/eliascourt/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F695D830-143A-48FB-918C-3848112208B0/inkapp.app/www/index.html#/tab/dash
