@@ -12,7 +12,8 @@
         "likes": 1024,
         "deposit": 100,
         "fullPrice": 1200,
-        "currency": "€"
+        "currency": "€",
+        "loc": { "type": "Point", "coordinates": [ 2.352222, 48.856614 ] }
     }
     ,
     {
@@ -27,7 +28,8 @@
         "likes": 512,
         "deposit": 80,
         "fullPrice": 6000,
-        "currency": "£"
+        "currency": "£",
+        "loc": { "type": "Point", "coordinates": [ -0.105191, 51.500687 ] }
     }
     ,
     {
@@ -42,7 +44,8 @@
         "likes": 999,
         "deposit": 80,
         "fullPrice": 6000,
-        "currency": "C$"
+        "currency": "C$",
+        "loc": { "type": "Point", "coordinates": [ -73.553992, 45.508670 ] }
     }
     ,
     {
@@ -57,7 +60,8 @@
         "likes": 236,
         "deposit": 80,
         "fullPrice": 364,
-        "currency": "£"
+        "currency": "£",
+        "loc": { "type": "Point", "coordinates": [ -0.105191, 51.500687 ] }
     }
     ,
     {
@@ -72,7 +76,8 @@
         "likes": 999,
         "deposit": 80,
         "fullPrice": 6000,
-        "currency": "$"
+        "currency": "$",
+        "loc": { "type": "Point", "coordinates": [ -73.984472, 40.759011 ] }
     }
     ,
     {
@@ -88,7 +93,8 @@
         "likes": 1024,
         "deposit": 100,
         "fullPrice": 9999,
-        "currency": "€"
+        "currency": "€",
+        "loc": { "type": "Point", "coordinates": [ 2.352222, 48.856614 ] }
     }
     ,
     {
@@ -103,7 +109,8 @@
         "likes": 999,
         "deposit": 80,
         "fullPrice": 6000,
-        "currency": "C$"
+        "currency": "C$",
+        "loc": { "type": "Point", "coordinates": [ -73.553992, 45.508670 ] }
     }
     ,
     {
@@ -119,6 +126,7 @@
         "likes": 1024,
         "deposit": 100,
         "fullPrice": 9999,
-        "currency": "€"
+        "currency": "€",
+        "loc": { "type": "Point", "coordinates": [ 2.352222, 48.856614 ] }
     }
 ]
