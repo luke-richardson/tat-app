@@ -1,2 +1,4 @@
 
 *.keystore
+
+inkBackend/credentials.json

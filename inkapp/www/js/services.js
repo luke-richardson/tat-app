@@ -1,20 +1,43 @@
 angular.module('ink.services', [])
 
-    .factory('QueryTats', function ($http) {
+    .factory('socket', function ($rootScope) {
+        var socket = io.connect('127.0.0.1:2118');
+        return {
+            on: function (eventName, callback) {
+                socket.on(eventName, function () {
+                    var args = arguments;
+                    $rootScope.$apply(function () {
+                        callback.apply(socket, args);
+                    });
+                });
+            },
+            emit: function (eventName, data, callback) {
+                socket.emit(eventName, data, function () {
+                    var args = arguments;
+                    $rootScope.$apply(function () {
+                        if (callback) {
+                            callback.apply(socket, args);
+                        }
+                    });
+                })
+            }
+        }})
+
+    .factory('QueryTats', function (socket) {
         var factory = {};
 
-        factory.execute = function (filename) {
-            return $http.get(filename)
+        factory.execute = function (callback) {
+            socket.emit('getArtworks', {},  callback);
         };
 
         return factory;
     })
 
-    .factory('QueryArtistById', function ($http) {
+    .factory('QueryArtistById', function (socket) {
         var factory = {};
 
-        factory.execute = function (filename, artistId) {
-            return $http.get(filename)
+        factory.execute = function (artistName, callback) {
+            socket.emit('getUser', artistName, callback);
         };
 
         return factory;

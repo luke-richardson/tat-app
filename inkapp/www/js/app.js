@@ -56,7 +56,7 @@ angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directiv
             })
 
             .state('tab.artist-detail', {
-                url: '/artist/:artistId',
+                url: '/artist/:artistName',
                 views: {
                     'tab-dash': {
                         templateUrl: 'templates/artist-detail.html',

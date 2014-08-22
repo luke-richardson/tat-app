@@ -12,7 +12,7 @@ angular.module('ink.controllers', [])
             showDelay: 50
         });
 
-        QueryTats.execute('./testLib/test-data.json').success(function (data) {
+        QueryTats.execute(function (data) {
             $scope.cards = data;
             $ionicLoading.hide();
         });
@@ -31,12 +31,12 @@ angular.module('ink.controllers', [])
             showDelay: 50
         });
 
-        QueryArtistById.execute('./testLib/test-artists.json', $stateParams.artistId).success(function (data) {
-            $scope.artist = data[$stateParams.artistId]; //But really the service should be fetching by artistID - this is for testing.
+        QueryArtistById.execute($stateParams.artistName, function (data) {
+            $scope.artist = data;
             $scope.artistPageTitle = $scope.artist.artistName + "'s profile"
-            QueryTats.execute('./testLib/test-data.json').success(function (data) {
+            QueryTats.execute(function (data) {
                 $scope.artistArtworks = data.filter(function (item) {
-                    return item.artist.artistId === $scope.artist.artistId
+                    return item.artistName === $scope.artist.artistName
                 });
                 $ionicLoading.hide();
             });

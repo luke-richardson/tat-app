@@ -1,10 +1,10 @@
 <div class="card">
-    <a ng-href="#/tab/artist/{{artwork.artist.artistId}}" class="item item-avatar">
-        <img ng-src={{artwork.artist.artistAvatar}}>
+    <a ng-href="#/tab/artist/{{artwork.artistName}}" class="item item-avatar">
+        <img ng-src={{artwork.artistAvatar}}>
 
         <h2>{{artwork.title}}</h2>
 
-        <p>{{artwork.artist.artistName}}</p>
+        <p>{{artwork.artistName}}</p>
     </a>
     <a ng-click="openModal(artwork.artworkUrl)" class="item item-image">
         <img ng-src={{artwork.artworkUrl}}>
