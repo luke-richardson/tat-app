@@ -1,6 +1,7 @@
 angular.module('ink.directives', [])
 
     .directive('artworkCard', function() {
+
         return {
             restrict: 'E',
             scope: {

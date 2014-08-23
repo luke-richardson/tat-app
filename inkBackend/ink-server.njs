@@ -1,7 +1,10 @@
 var AWS = require('aws-sdk');
 AWS.config.loadFromPath('./credentials.json');
-var dynamodb = new AWS.DynamoDB();
 var converter = require('./dynamotojson.js');
+var databaseUrl = "localhost:27017/inkdb";
+var collections = ["users", "artworks"];
+var db = require("mongojs").connect(databaseUrl, collections);
+
 
 var io = require('socket.io')(2118);
 
@@ -10,31 +13,34 @@ io.on('connection', function(socket) {
 
 	socket.on('getUser', function(userName, callback) {
 		console.log("Received request for " + userName);
-		dynamodb.getItem({
-			"TableName" : "users",
-			"Key" : {
-				"artistName" : {
-					"S" : userName
-				}
-			}
-		}, function(err, data) {
+		db.users.findOne({artistName: userName}, function(err, data) {
 			if (err) {
 				console.log(err);
 			} else {
-				callback(converter.ObjectConverter(data.Item));
+				console.log(data);
+				callback(data);
 			}
 		});
 	});
 	
 	socket.on('getArtworks', function(args, callback) {
 		console.log("Received fetch artworks request.");
-		dynamodb.scan({
-			"TableName" : 'artworks'
-		}, function(err, data) {
+		db.artworks.find({}).limit(10, function(err, data) {
 			if (err) {
 				console.log(err, err.stack);
 			} else {
-				callback(converter.ArrayConverter(data.Items));
+				callback(data);
+			}
+		});
+	});
+	
+	socket.on('getArtworksByArtist', function(artist, callback) {
+		console.log("Received fetch artworks by artist request.");
+		db.artworks.find({artistName: artist}).limit(10, function(err, data) {
+			if (err) {
+				console.log(err, err.stack);
+			} else {
+				callback(data);
 			}
 		});
 	});

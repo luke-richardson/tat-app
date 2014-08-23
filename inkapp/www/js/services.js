@@ -1,7 +1,7 @@
 angular.module('ink.services', [])
 
     .factory('socket', function ($rootScope) {
-        var socket = io.connect('127.0.0.1:2118');
+        var socket = io.connect($rootScope.destination);
         return {
             on: function (eventName, callback) {
                 socket.on(eventName, function () {
@@ -29,6 +29,10 @@ angular.module('ink.services', [])
         factory.execute = function (callback) {
             socket.emit('getArtworks', {},  callback);
         };
+
+        factory.getTatsByArtistName = function(artistName, callback){
+            socket.emit('getArtworksByArtist', artistName,  callback);
+        }
 
         return factory;
     })

@@ -1,17 +1,48 @@
 angular.module('ink.services', [])
 
-    .factory('QueryTats', function ($http) {
+    .factory('socket', function ($rootScope) {
+        var socket = io.connect($rootScope.destination);
+        return {
+            on: function (eventName, callback) {
+                socket.on(eventName, function () {
+                    var args = arguments;
+                    $rootScope.$apply(function () {
+                        callback.apply(socket, args);
+                    });
+                });
+            },
+            emit: function (eventName, data, callback) {
+                socket.emit(eventName, data, function () {
+                    var args = arguments;
+                    $rootScope.$apply(function () {
+                        if (callback) {
+                            callback.apply(socket, args);
+                        }
+                    });
+                })
+            }
+        }})
+
+    .factory('QueryTats', function (socket) {
         var factory = {};
 
-        factory.execute = function(filename, callback){return $http.get(filename).success(callback)};
+        factory.execute = function (callback) {
+            socket.emit('getArtworks', {},  callback);
+        };
+
+        factory.getTatsByArtistName = function(artistName, callback){
+            socket.emit('getArtworksByArtist', artistName,  callback);
+        }
 
         return factory;
     })
 
-    .factory('QueryArtistById', function ($http) {
+    .factory('QueryArtistById', function (socket) {
         var factory = {};
 
-        factory.execute = function(filename, artistId, callback){return $http.get(filename).success(callback)};
+        factory.execute = function (artistName, callback) {
+            socket.emit('getUser', artistName, callback);
+        };
 
         return factory;
     })

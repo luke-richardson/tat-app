@@ -7,7 +7,8 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directives'])
 
-    .run(function ($ionicPlatform) {
+    .run(function ($ionicPlatform, $rootScope) {
+        $rootScope.destination = 'http://127.0.0.1:2118';
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)

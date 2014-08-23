@@ -34,10 +34,8 @@ angular.module('ink.controllers', [])
         QueryArtistById.execute($stateParams.artistName, function (data) {
             $scope.artist = data;
             $scope.artistPageTitle = $scope.artist.artistName + "'s profile"
-            QueryTats.execute(function (data) {
-                $scope.artistArtworks = data.filter(function (item) {
-                    return item.artistName === $scope.artist.artistName
-                });
+            QueryTats.getTatsByArtistName($scope.artist.artistName, function (data) {
+                $scope.artistArtworks = data;
                 $ionicLoading.hide();
             });
         });
