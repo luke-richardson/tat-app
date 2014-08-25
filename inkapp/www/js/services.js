@@ -23,25 +23,56 @@ angular.module('ink.services', [])
             }
         }})
 
-    .factory('QueryTats', function (socket) {
+    .factory('cacheMaster', function(socket) {
+        return {
+            callOrCacheSession: function(args, socketF, callback){
+                var sArgs = socketF + angular.toJson(args);
+                if(sessionStorage.getItem(sArgs) !== null){
+                    callback(angular.fromJson(sessionStorage.getItem(sArgs)));
+                }else{
+                    var wrappedCallback = function(data){
+                        sessionStorage.setItem(sArgs, angular.toJson(data));
+                        callback(data);
+                    }
+                    socket.emit(socketF, args,  wrappedCallback);
+                }
+
+            },
+            callOrCacheLocal: function(args, socketF, callback){
+                var sArgs = angular.toJson(args);
+                if(localStorage.getItem(sArgs) !== null){
+                    callback(angular.fromJson(localStorage.getItem(sArgs)));
+                }else{
+                    var wrappedCallback = function(data){
+                        localStorage.setItem(sArgs, angular.toJson(data));
+                        callback(data);
+                    }
+                    socket.emit(socketF, args,  wrappedCallback);
+                }
+
+            }
+        }
+    })
+
+    .factory('QueryTats', function (socket, cacheMaster) {
         var factory = {};
 
         factory.execute = function (callback) {
-            socket.emit('getArtworks', {},  callback);
+            cacheMaster.callOrCacheLocal('dashContents', 'getArtworks', callback);
         };
 
         factory.getTatsByArtistName = function(artistName, callback){
-            socket.emit('getArtworksByArtist', artistName,  callback);
+            cacheMaster.callOrCacheSession(artistName, 'getArtworksByArtist', callback);
         }
 
         return factory;
     })
 
-    .factory('QueryArtistById', function (socket) {
+    .factory('QueryArtistById', function (socket, cacheMaster) {
         var factory = {};
 
         factory.execute = function (artistName, callback) {
-            socket.emit('getUser', artistName, callback);
+            cacheMaster.callOrCacheSession(artistName, 'getUser', callback);
         };
 
         return factory;
