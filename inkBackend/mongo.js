@@ -1,0 +1,1 @@
+module.exports = require("mongojs").connect("localhost:27017/inkdb", [ "users", "artworks" ]);

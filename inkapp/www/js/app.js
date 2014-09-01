@@ -8,8 +8,14 @@
 angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directives'])
 
     .run(function ($ionicPlatform, $rootScope) {
-        $rootScope.destination = 'http://127.0.0.1:2118';
+        $rootScope.destination = 'https://192.168.1.65:2118/';
         $ionicPlatform.ready(function () {
+
+
+            if (!window.cordova) {
+                facebookConnectPlugin.browserInit("331871496967792");
+                // version is optional. It refers to the version of API you may want to use.
+            }
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -62,25 +68,6 @@ angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directiv
                     'tab-dash': {
                         templateUrl: 'templates/artist-detail.html',
                         controller: 'ArtistDetailCtrl'
-                    }
-                }
-            })
-
-            .state('tab.friends', {
-                url: '/friends',
-                views: {
-                    'tab-friends': {
-                        templateUrl: 'templates/tab-friends.html',
-                        controller: 'FriendsCtrl'
-                    }
-                }
-            })
-            .state('tab.friend-detail', {
-                url: '/friend/:friendId',
-                views: {
-                    'tab-friends': {
-                        templateUrl: 'templates/friend-detail.html',
-                        controller: 'FriendDetailCtrl'
                     }
                 }
             })
