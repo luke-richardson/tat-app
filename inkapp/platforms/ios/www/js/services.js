@@ -26,7 +26,12 @@ angular.module('ink.services', [])
     })
 
     .factory('secureSocket', function ($rootScope) {
-        var socket = io.connect($rootScope.destination + 'sio');
+
+        var socket = io.connect($rootScope.destination + 'sio').on('connect', function () {
+            socket.on('authenticated', function () {
+                }).emit('authenticate', {token: localStorage.getItem("token")}).on('authenticated', function(){
+            });
+        });
 
         return {
             on: function (eventName, callback) {
@@ -105,13 +110,14 @@ angular.module('ink.services', [])
         return factory;
     })
 
-    .factory('LoginService', function ($rootScope, $ionicPopup, $ionicTabsDelegate, socket) {
+    .factory('LoginService', function ($rootScope, $ionicPopup, $ionicTabsDelegate, socket, secureSocket) {
         var lgn = {};
         var lgnScope = $rootScope.$new();
 
         var serverAuth = function (suc) {
             facebookConnectPlugin.getAccessToken(function (token) {
-                socket.emit("authenticate", token, function (profile) {
+                socket.emit("authenticate", token, function (profile, token) {
+                    localStorage.setItem("token", token);
                     sessionStorage.setItem("myProfile", angular.toJson(profile));
                     suc(profile);
                 })
@@ -148,18 +154,30 @@ angular.module('ink.services', [])
                 if (res) {
                     fbLogin(suc);
                 } else {
-                    //console.log('You are not sure');
                     $ionicTabsDelegate.select(0, true);
                 }
             });
         };
 
         lgn.checkLoggedIn = function (successCallback, failureCallback) {
+
             facebookConnectPlugin.getLoginStatus(function (sObj) {
                 if (sObj.status === 'connected') {
                     var profile = angular.fromJson(sessionStorage.getItem("myProfile"));
                     if(profile === null){
-                        serverAuth(successCallback);
+                        var tkn = localStorage.getItem("token");
+                        if(tkn === null){
+                            serverAuth(successCallback);
+                        }else{
+                            secureSocket.emit('myProfile', {}, function(data){
+                                if(data !== null && data.err === undefined){
+                                    sessionStorage.setItem("myProfile", angular.toJson(data));
+                                    successCallback(data);
+                                }else{
+                                    failPopup();
+                                }
+                            });
+                        }
                     } else {
                         successCallback(profile);
                     }

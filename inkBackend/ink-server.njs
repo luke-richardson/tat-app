@@ -1,9 +1,15 @@
 var AWS = require('aws-sdk');
 AWS.config.loadFromPath('./credentials.json');
-var db = require('./mongo.js');
+var mongojs = require('mongojs');
+var db = mongojs.connect("localhost:27017/inkdb", [ "users", "artworks" ]);
 var https = require("https");
 var fs = require('fs');
 var FB = require('fb');
+var jwt = require('jsonwebtoken');
+var key = '53f87e792215525bdfdb200e291aca83764b3d8a3dd8d74090a046e73c82d11178ae47b425f4bf6efe0f988b';
+
+//epoch is (new Date()).getTime()
+var batchSize = 3;
 
 var server = https.createServer({
 	key : fs.readFileSync('./ssl/server.key', 'utf8'),
@@ -14,6 +20,8 @@ var port = 2118;
 
 var io = require('socket.io')(server);
 var sio = io.of("/sio");
+
+var socketioJwt   = require("./socketiojwt.js");
 
 server.listen(port);
 console.log("Listening on port: " + port);
@@ -35,7 +43,13 @@ io.on('connection', function(socket) {
 					if (err) {
 						console.log(err, err.stack);
 					} else if (data !== null) {
-						callback(data);
+						var tkn = jwt.sign({
+							fbtkn: token,
+							id: data._id,
+							name: data.artistName
+						}, key);
+						console.log(tkn);
+						callback(data, tkn);
 					} else {
 						var joinDate = new Date();
 						db.users.insert({
@@ -51,7 +65,13 @@ io.on('connection', function(socket) {
 								if (err) {
 									console.log(err);
 								} else {
-									callback(dat2);
+									var tkn = jwt.sign({
+										fbtkn: token,
+										id: dat2._id,
+										name: dat2.artistName
+									}, key);
+									console.log(tkn);
+									callback(dat2, tkn);
 								}
 							});
 					}
@@ -79,7 +99,7 @@ io.on('connection', function(socket) {
 
 	socket.on('getArtworks', function(args, callback) {
 		// console.log("Received fetch artworks request.");
-		db.artworks.find({}).limit(10, function(err, data) {
+		db.artworks.find({}).limit(batchSize, function(err, data) {
 			if (err) {
 				console.log(err, err.stack);
 			} else {
@@ -92,7 +112,7 @@ io.on('connection', function(socket) {
 		// console.log("Received fetch artworks by artist request.");
 		db.artworks.find({
 			artistName : artist
-		}).limit(10, function(err, data) {
+		}).limit(batchSize, function(err, data) {
 			if (err) {
 				console.log(err, err.stack);
 			} else {
@@ -101,24 +121,21 @@ io.on('connection', function(socket) {
 		});
 	});
 
-	socket.on('getArtworksByDistance', function(args, maxDistanceInMetres,
+	socket.on('getArtworksByDistance', function(args,
 			callback) {
 		console.log("Received fetch artworks by distance request.");
-		db.artworks.find({
-			loc : {
-				$near : {
-					$geometry : {
-						type : 'Point',
-						coordinates : [ args.longitude, args.latitude ]
-					},
-					$maxDistance : maxDistanceInMetres
-				}
-			}
-		}).limit(10, function(err, data) {
+		db.runCommand(
+				{
+					geoNear: "artworks",
+					near: { type: "Point", coordinates: [ args.longitude, args.latitude ] },
+					spherical: true,
+					limit: batchSize,
+					minDistance: args.minDistanceMetres
+				}, function(err, data) {
 			if (err) {
 				console.log(err, err.stack);
 			} else {
-				callback(data);
+				callback(data.results);
 			}
 		});
 	});
@@ -127,7 +144,27 @@ io.on('connection', function(socket) {
 	});
 });
 
+
+
 // Behaviour that requires being logged in.
-sio.on('connection', function(socket) {
-	console.log("User is logged in.");
+sio.on('connection', socketioJwt.authorize({
+    secret: key,
+    server: sio,
+    timeout: 15000 // 15 seconds to send the authentication message
+  })).on('authenticated', function(socket) {
+	console.log(socket.decoded_token.name + ' has connected');
+	
+	socket.on('myProfile', function(na, callback){
+		console.log("Totally worked: " + socket.decoded_token.id);
+		db.users.findOne({
+			_id : mongojs.ObjectId(socket.decoded_token.id)
+		}, function(err, data){
+			if (err) {
+				console.log(err, err.stack);
+			} else {
+				console.log("callback data: " + data);
+				callback(data);
+			}
+		});
+	});
 });

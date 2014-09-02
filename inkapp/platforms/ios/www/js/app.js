@@ -11,7 +11,6 @@ angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directiv
         $rootScope.destination = 'https://192.168.1.65:2118/';
         $ionicPlatform.ready(function () {
 
-
             if (!window.cordova) {
                 facebookConnectPlugin.browserInit("331871496967792");
                 // version is optional. It refers to the version of API you may want to use.
