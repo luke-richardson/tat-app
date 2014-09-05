@@ -25,11 +25,6 @@ angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directiv
                 StatusBar.styleDefault();
             }
 
-            window.addEventListener('load', function () {
-                FastClick.attach(document.body);
-            }, false)
-
-
         });
     })
 

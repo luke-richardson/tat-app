@@ -669,3 +669,157 @@ objc[50854]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.a
 2014-09-03 00:04:35.805 inkapp[50854:4007] CFNetwork SSLHandshake failed (-9807)
 2014-09-03 00:06:36.495 inkapp[50854:4007] CFNetwork SSLHandshake failed (-9807)
 2014-09-03 00:06:40.846 inkapp[50854:70b] THREAD WARNING: ['FacebookConnectPlugin'] took '13.406250' ms. Plugin should use a background thread.
+objc[51929]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-09-03 20:31:08.021 inkapp[51929:70b] Cannot find executable for CFBundle 0xa818b30 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-09-03 20:31:08.028 inkapp[51929:70b] Cannot find executable for CFBundle 0xa7200a0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/SocialFramework.axbundle> (not loaded)
+2014-09-03 20:31:08.037 inkapp[51929:70b] Cannot find executable for CFBundle 0xa83d420 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-09-03 20:31:08.087 inkapp[51929:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-03 20:31:08.121 inkapp[51929:70b] Unlimited access to network resources
+2014-09-03 20:31:08.366 inkapp[51929:70b] [CDVTimer][keyboard] 0.087976ms
+2014-09-03 20:31:08.367 inkapp[51929:70b] Init FacebookConnect Session
+2014-09-03 20:31:08.374 inkapp[51929:70b] [CDVTimer][facebookconnectplugin] 6.815016ms
+2014-09-03 20:31:08.374 inkapp[51929:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-09-03 20:31:08.375 inkapp[51929:70b] [CDVTimer][statusbar] 0.671983ms
+2014-09-03 20:31:08.376 inkapp[51929:70b] [CDVTimer][TotalPluginStartup] 9.638011ms
+2014-09-03 20:31:09.065 inkapp[51929:70b] Resetting plugins due to page load.
+2014-09-03 20:31:09.669 inkapp[51929:70b] Finished load of: file:///Users/eliascourt/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F695D830-143A-48FB-918C-3848112208B0/inkapp.app/www/index.html#/tab/dash
+2014-09-03 20:31:10.098 inkapp[51929:3f07] CFNetwork SSLHandshake failed (-9807)
+objc[53348]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-09-05 13:24:54.344 inkapp[53348:70b] Cannot find executable for CFBundle 0xa835fe0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-09-05 13:24:54.357 inkapp[53348:70b] Cannot find executable for CFBundle 0xaa35330 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/SocialFramework.axbundle> (not loaded)
+2014-09-05 13:24:54.360 inkapp[53348:70b] Cannot find executable for CFBundle 0xaa20690 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-09-05 13:24:54.425 inkapp[53348:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-05 13:24:54.494 inkapp[53348:70b] Unlimited access to network resources
+2014-09-05 13:24:54.715 inkapp[53348:70b] [CDVTimer][keyboard] 0.118017ms
+2014-09-05 13:24:54.715 inkapp[53348:70b] Init FacebookConnect Session
+2014-09-05 13:24:54.723 inkapp[53348:70b] [CDVTimer][facebookconnectplugin] 7.710993ms
+2014-09-05 13:24:54.724 inkapp[53348:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-09-05 13:24:54.724 inkapp[53348:70b] [CDVTimer][statusbar] 0.612020ms
+2014-09-05 13:24:54.725 inkapp[53348:70b] [CDVTimer][TotalPluginStartup] 10.389030ms
+2014-09-05 13:24:55.448 inkapp[53348:70b] Resetting plugins due to page load.
+2014-09-05 13:24:56.060 inkapp[53348:70b] Finished load of: file:///Users/eliascourt/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F695D830-143A-48FB-918C-3848112208B0/inkapp.app/www/index.html#/tab/dash
+2014-09-05 13:25:06.461 inkapp[53348:4107] CFNetwork SSLHandshake failed (-9807)
+objc[53945]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-09-05 13:34:53.558 inkapp[53945:70b] Cannot find executable for CFBundle 0xa812bf0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-09-05 13:34:53.568 inkapp[53945:70b] Cannot find executable for CFBundle 0xa732270 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-09-05 13:34:53.586 inkapp[53945:70b] Cannot find executable for CFBundle 0xa81ad40 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/SocialFramework.axbundle> (not loaded)
+2014-09-05 13:34:53.648 inkapp[53945:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-05 13:34:53.743 inkapp[53945:70b] Unlimited access to network resources
+2014-09-05 13:34:53.979 inkapp[53945:70b] [CDVTimer][keyboard] 0.127971ms
+2014-09-05 13:34:53.980 inkapp[53945:70b] Init FacebookConnect Session
+2014-09-05 13:34:53.984 inkapp[53945:70b] [CDVTimer][facebookconnectplugin] 4.016995ms
+2014-09-05 13:34:53.985 inkapp[53945:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-09-05 13:34:53.985 inkapp[53945:70b] [CDVTimer][statusbar] 0.635982ms
+2014-09-05 13:34:53.986 inkapp[53945:70b] [CDVTimer][TotalPluginStartup] 6.816030ms
+2014-09-05 13:34:54.693 inkapp[53945:70b] Resetting plugins due to page load.
+2014-09-05 13:34:55.126 inkapp[53945:70b] Finished load of: file:///Users/eliascourt/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F695D830-143A-48FB-918C-3848112208B0/inkapp.app/www/index.html#/tab/dash
+2014-09-05 13:34:55.377 inkapp[53945:3f07] CFNetwork SSLHandshake failed (-9807)
+2014-09-05 13:35:38.169 inkapp[53945:70b] THREAD WARNING: ['FacebookConnectPlugin'] took '27.878906' ms. Plugin should use a background thread.
+objc[54414]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-09-05 13:39:40.938 inkapp[54414:70b] Cannot find executable for CFBundle 0xaa14970 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/SocialFramework.axbundle> (not loaded)
+2014-09-05 13:39:40.947 inkapp[54414:70b] Cannot find executable for CFBundle 0xa9211d0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-09-05 13:39:40.956 inkapp[54414:70b] Cannot find executable for CFBundle 0xa9399c0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-09-05 13:39:41.066 inkapp[54414:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-05 13:39:41.106 inkapp[54414:70b] Unlimited access to network resources
+2014-09-05 13:39:41.380 inkapp[54414:70b] [CDVTimer][keyboard] 0.082970ms
+2014-09-05 13:39:41.381 inkapp[54414:70b] Init FacebookConnect Session
+2014-09-05 13:39:41.385 inkapp[54414:70b] [CDVTimer][facebookconnectplugin] 4.090965ms
+2014-09-05 13:39:41.385 inkapp[54414:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-09-05 13:39:41.386 inkapp[54414:70b] [CDVTimer][statusbar] 0.663996ms
+2014-09-05 13:39:41.387 inkapp[54414:70b] [CDVTimer][TotalPluginStartup] 6.715000ms
+2014-09-05 13:39:42.068 inkapp[54414:70b] Resetting plugins due to page load.
+2014-09-05 13:39:42.568 inkapp[54414:70b] Finished load of: file:///Users/eliascourt/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F695D830-143A-48FB-918C-3848112208B0/inkapp.app/www/index.html#/tab/dash
+2014-09-05 13:39:43.043 inkapp[54414:3f07] CFNetwork SSLHandshake failed (-9807)
+2014-09-05 13:39:46.186 inkapp[54414:70b] Successfully logged out.
+2014-09-05 13:39:49.350 inkapp[54414:70b] THREAD WARNING: ['FacebookConnectPlugin'] took '595.978027' ms. Plugin should use a background thread.
+2014-09-05 13:40:33.830 inkapp[54414:70b] THREAD WARNING: ['FacebookConnectPlugin'] took '30.365723' ms. Plugin should use a background thread.
+2014-09-05 13:40:33.846 inkapp[54414:70b] Successfully logged out.
+2014-09-05 13:40:36.147 inkapp[54414:70b] THREAD WARNING: ['FacebookConnectPlugin'] took '10.008057' ms. Plugin should use a background thread.
+objc[55440]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-09-05 13:49:30.498 inkapp[55440:70b] Cannot find executable for CFBundle 0xa720dc0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/SocialFramework.axbundle> (not loaded)
+2014-09-05 13:49:30.528 inkapp[55440:70b] Cannot find executable for CFBundle 0xaa34960 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-09-05 13:49:30.551 inkapp[55440:70b] Cannot find executable for CFBundle 0xa72b760 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-09-05 13:49:30.623 inkapp[55440:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-05 13:49:30.698 inkapp[55440:70b] Unlimited access to network resources
+2014-09-05 13:49:30.962 inkapp[55440:70b] [CDVTimer][keyboard] 0.135005ms
+2014-09-05 13:49:30.963 inkapp[55440:70b] Init FacebookConnect Session
+2014-09-05 13:49:30.968 inkapp[55440:70b] [CDVTimer][facebookconnectplugin] 5.207002ms
+2014-09-05 13:49:30.969 inkapp[55440:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-09-05 13:49:30.969 inkapp[55440:70b] [CDVTimer][statusbar] 0.743985ms
+2014-09-05 13:49:30.970 inkapp[55440:70b] [CDVTimer][TotalPluginStartup] 8.297980ms
+2014-09-05 13:49:31.908 inkapp[55440:70b] Resetting plugins due to page load.
+2014-09-05 13:49:33.101 inkapp[55440:70b] Finished load of: file:///Users/eliascourt/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F695D830-143A-48FB-918C-3848112208B0/inkapp.app/www/index.html#/tab/dash
+2014-09-05 13:49:33.638 inkapp[55440:4007] CFNetwork SSLHandshake failed (-9807)
+2014-09-05 13:49:36.113 inkapp[55440:70b] Successfully logged out.
+2014-09-05 13:49:38.592 inkapp[55440:70b] THREAD WARNING: ['FacebookConnectPlugin'] took '510.388916' ms. Plugin should use a background thread.
+objc[55971]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-09-05 18:46:53.164 inkapp[55971:70b] Cannot find executable for CFBundle 0xa92a0f0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-09-05 18:46:53.225 inkapp[55971:70b] Cannot find executable for CFBundle 0xa7187a0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-09-05 18:46:53.241 inkapp[55971:70b] Cannot find executable for CFBundle 0xa84b170 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/SocialFramework.axbundle> (not loaded)
+2014-09-05 18:46:53.439 inkapp[55971:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-05 18:46:53.534 inkapp[55971:70b] Unlimited access to network resources
+2014-09-05 18:46:54.001 inkapp[55971:70b] [CDVTimer][keyboard] 0.151992ms
+2014-09-05 18:46:54.022 inkapp[55971:70b] Init FacebookConnect Session
+2014-09-05 18:46:54.091 inkapp[55971:70b] [CDVTimer][facebookconnectplugin] 69.342017ms
+2014-09-05 18:46:54.092 inkapp[55971:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-09-05 18:46:54.093 inkapp[55971:70b] [CDVTimer][statusbar] 0.878990ms
+2014-09-05 18:46:54.093 inkapp[55971:70b] [CDVTimer][TotalPluginStartup] 92.761040ms
+2014-09-05 18:46:56.037 inkapp[55971:70b] Resetting plugins due to page load.
+2014-09-05 18:46:57.491 inkapp[55971:70b] Finished load of: file:///Users/eliascourt/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F695D830-143A-48FB-918C-3848112208B0/inkapp.app/www/index.html#/tab/dash
+objc[56378]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-09-05 18:49:51.037 inkapp[56378:70b] Cannot find executable for CFBundle 0xa81c7b0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/SocialFramework.axbundle> (not loaded)
+2014-09-05 18:49:51.096 inkapp[56378:70b] Cannot find executable for CFBundle 0xa826b40 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-09-05 18:49:51.108 inkapp[56378:70b] Cannot find executable for CFBundle 0xa926b70 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-09-05 18:49:51.188 inkapp[56378:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-05 18:49:51.223 inkapp[56378:70b] Unlimited access to network resources
+2014-09-05 18:49:51.435 inkapp[56378:70b] [CDVTimer][keyboard] 0.131011ms
+2014-09-05 18:49:51.436 inkapp[56378:70b] Init FacebookConnect Session
+2014-09-05 18:49:51.440 inkapp[56378:70b] [CDVTimer][facebookconnectplugin] 4.804015ms
+2014-09-05 18:49:51.441 inkapp[56378:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-09-05 18:49:51.442 inkapp[56378:70b] [CDVTimer][statusbar] 0.616014ms
+2014-09-05 18:49:51.442 inkapp[56378:70b] [CDVTimer][TotalPluginStartup] 7.790029ms
+2014-09-05 18:49:52.265 inkapp[56378:70b] Resetting plugins due to page load.
+2014-09-05 18:49:52.852 inkapp[56378:70b] Finished load of: file:///Users/eliascourt/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F695D830-143A-48FB-918C-3848112208B0/inkapp.app/www/index.html#/tab/dash
+2014-09-05 18:49:53.086 inkapp[56378:70b] THREAD WARNING: ['Device'] took '17.525879' ms. Plugin should use a background thread.
+2014-09-05 18:49:53.157 inkapp[56378:4007] CFNetwork SSLHandshake failed (-9807)
+2014-09-05 18:49:56.505 inkapp[56378:70b] Successfully logged out.
+2014-09-05 18:49:59.770 inkapp[56378:70b] THREAD WARNING: ['FacebookConnectPlugin'] took '777.961182' ms. Plugin should use a background thread.
+2014-09-05 18:50:03.599 inkapp[56378:70b] Successfully logged out.
+2014-09-05 18:50:13.127 inkapp[56378:70b] Successfully logged out.
+2014-09-05 18:50:19.169 inkapp[56378:70b] Successfully logged out.
+objc[56824]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-09-05 19:02:31.655 inkapp[56824:70b] Cannot find executable for CFBundle 0xaa20080 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-09-05 19:02:31.664 inkapp[56824:70b] Cannot find executable for CFBundle 0xaa48e30 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-09-05 19:02:31.669 inkapp[56824:70b] Cannot find executable for CFBundle 0xaa51a10 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/SocialFramework.axbundle> (not loaded)
+2014-09-05 19:02:31.723 inkapp[56824:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-05 19:02:31.759 inkapp[56824:70b] Unlimited access to network resources
+2014-09-05 19:02:31.957 inkapp[56824:70b] [CDVTimer][keyboard] 0.137985ms
+2014-09-05 19:02:31.958 inkapp[56824:70b] Init FacebookConnect Session
+2014-09-05 19:02:31.959 inkapp[56824:70b] [CDVTimer][facebookconnectplugin] 0.993967ms
+2014-09-05 19:02:31.960 inkapp[56824:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-09-05 19:02:31.962 inkapp[56824:70b] [CDVTimer][statusbar] 1.630008ms
+2014-09-05 19:02:31.963 inkapp[56824:70b] [CDVTimer][TotalPluginStartup] 5.569041ms
+2014-09-05 19:02:32.692 inkapp[56824:70b] Resetting plugins due to page load.
+2014-09-05 19:02:33.213 inkapp[56824:70b] Finished load of: file:///Users/eliascourt/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F695D830-143A-48FB-918C-3848112208B0/inkapp.app/www/index.html#/tab/dash
+2014-09-05 19:02:33.497 inkapp[56824:4007] CFNetwork SSLHandshake failed (-9807)
+2014-09-05 19:03:42.638 inkapp[56824:70b] THREAD WARNING: ['FacebookConnectPlugin'] took '13.789795' ms. Plugin should use a background thread.
+2014-09-05 19:07:38.120 inkapp[56824:4007] CFNetwork SSLHandshake failed (-9807)
+2014-09-05 19:12:18.598 inkapp[56824:4007] CFNetwork SSLHandshake failed (-9807)
+2014-09-05 19:12:19.638 inkapp[56824:4007] CFNetwork SSLHandshake failed (-9807)
+2014-09-05 19:12:36.739 inkapp[56824:70b] THREAD WARNING: ['FacebookConnectPlugin'] took '1086.687012' ms. Plugin should use a background thread.
+2014-09-05 19:12:59.419 inkapp[56824:70b] Successfully logged out.
+objc[57290]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-09-05 19:19:49.304 inkapp[57290:70b] Cannot find executable for CFBundle 0xa930310 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-09-05 19:19:49.326 inkapp[57290:70b] Cannot find executable for CFBundle 0xa93bb20 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-09-05 19:19:49.333 inkapp[57290:70b] Cannot find executable for CFBundle 0xa80ef30 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/SocialFramework.axbundle> (not loaded)
+2014-09-05 19:19:49.625 inkapp[57290:70b] Multi-tasking -> Device: YES, App: YES
+2014-09-05 19:19:49.679 inkapp[57290:70b] Unlimited access to network resources
+2014-09-05 19:19:50.215 inkapp[57290:70b] [CDVTimer][keyboard] 0.099003ms
+2014-09-05 19:19:50.216 inkapp[57290:70b] Init FacebookConnect Session
+2014-09-05 19:19:50.221 inkapp[57290:70b] [CDVTimer][facebookconnectplugin] 4.809022ms
+2014-09-05 19:19:50.221 inkapp[57290:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-09-05 19:19:50.222 inkapp[57290:70b] [CDVTimer][statusbar] 0.674963ms
+2014-09-05 19:19:50.223 inkapp[57290:70b] [CDVTimer][TotalPluginStartup] 7.637024ms
+2014-09-05 19:19:51.340 inkapp[57290:70b] Resetting plugins due to page load.
+2014-09-05 19:19:52.137 inkapp[57290:70b] Finished load of: file:///Users/eliascourt/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F695D830-143A-48FB-918C-3848112208B0/inkapp.app/www/index.html#/tab/dash
+2014-09-05 19:19:52.570 inkapp[57290:4007] CFNetwork SSLHandshake failed (-9807)

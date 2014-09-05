@@ -20,6 +20,10 @@ function noQsMethod(options) {
 
     socket.on('authenticate', function (data) {
       clearTimeout(auth_timeout);
+      if(!(data.token && options.secret && options)){
+    	  console.log("Unauthorized access attempt");
+    	  return socket.disconnect('unauthorized');
+      }
       jwt.verify(data.token, options.secret, options, function(err, decoded) {
         if (err) {
           return socket.disconnect('unauthorized');

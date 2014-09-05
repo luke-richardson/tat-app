@@ -27,14 +27,21 @@ angular.module('ink.services', [])
 
     .factory('secureSocket', function ($rootScope) {
 
-        var socket = io.connect($rootScope.destination + 'sio').on('connect', function () {
-            socket.on('authenticated', function () {
-                }).emit('authenticate', {token: localStorage.getItem("token")}).on('authenticated', function(){
-            });
-        });
+        var socket = null;
+
+        var connect = function(){
+            if(localStorage.getItem("token") !== null){
+                socket = io.connect($rootScope.destination + 'sio').on('connect', function () {
+                    socket.on('authenticated', function () {
+                    }).emit('authenticate', {token: localStorage.getItem("token")}).on('authenticated', function(){
+                    });
+                });
+            }
+        }
 
         return {
             on: function (eventName, callback) {
+                if(socket === null) connect();
                 socket.on(eventName, function () {
                     var args = arguments;
                     $rootScope.$apply(function () {
@@ -43,6 +50,7 @@ angular.module('ink.services', [])
                 });
             },
             emit: function (eventName, data, callback) {
+                if(socket === null) connect();
                 socket.emit(eventName, data, function () {
                     var args = arguments;
                     $rootScope.$apply(function () {
@@ -110,13 +118,12 @@ angular.module('ink.services', [])
         return factory;
     })
 
-    .factory('LoginService', function ($rootScope, $ionicPopup, $ionicTabsDelegate, socket, secureSocket) {
+    .factory('LoginService', function ($ionicPopup, $ionicTabsDelegate, socket, secureSocket) {
         var lgn = {};
-        var lgnScope = $rootScope.$new();
 
         var serverAuth = function (suc) {
             facebookConnectPlugin.getAccessToken(function (token) {
-                socket.emit("authenticate", token, function (profile, token) {
+                socket.emit("authenticate", token, function(profile, token) {
                     localStorage.setItem("token", token);
                     sessionStorage.setItem("myProfile", angular.toJson(profile));
                     suc(profile);
@@ -183,15 +190,27 @@ angular.module('ink.services', [])
                     }
                 } else {
                     failureCallback();
-                    showLogin();
+                    showLogin(successCallback);
                 }
 
             }, function () {
                 failureCallback();
-                showLogin();
+                showLogin(successCallback);
             });
         }
 
+        lgn.logOut = function(){
+            localStorage.removeItem("token");
+            sessionStorage.removeItem("myProfile")
+            facebookConnectPlugin.logout(function(){
+                //Success
+                console.log("Successfully logged out.");
+            }, function(){
+                //Failure
+                console.log("Unsuccessful log out.");
+            });
+            $ionicTabsDelegate.select(0, true);
+        }
         return lgn;
 
     });

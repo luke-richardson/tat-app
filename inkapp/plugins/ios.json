@@ -98,12 +98,6 @@
                             "xml": "<string>Ink</string>",
                             "count": 1
                         }
-                    ],
-                    "CFBundleURLTypes": [
-                        {
-                            "xml": "<array><dict><key>CFBundleURLSchemes</key><array><string>fb331871496967792</string></array></dict></array>",
-                            "count": 1
-                        }
                     ]
                 }
             }

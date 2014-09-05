@@ -68,5 +68,9 @@ angular.module('ink.controllers', [])
             $scope.accountArtworks = [];
         });
 
+        $scope.logOut = function(){
+            LoginService.logOut();
+        };
+
 
     });

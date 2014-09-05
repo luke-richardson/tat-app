@@ -21,7 +21,7 @@ var port = 2118;
 var io = require('socket.io')(server);
 var sio = io.of("/sio");
 
-var socketioJwt   = require("./socketiojwt.js");
+var socketioJwt = require("./socketiojwt.js");
 
 server.listen(port);
 console.log("Listening on port: " + port);
@@ -31,6 +31,8 @@ io.on('connection', function(socket) {
 	console.log("New anonymous connect.");
 
 	socket.on('authenticate', function(token, callback) {
+		console.log("tkn received: " + token);
+		console.log("callback received: " + callback);
 		console.log("Authentication request received.");
 		FB.api('me', {
 			fields: ['id', 'name', 'picture', 'email', 'first_name', 'last_name', 'name'],
@@ -48,7 +50,6 @@ io.on('connection', function(socket) {
 							id: data._id,
 							name: data.artistName
 						}, key);
-						console.log(tkn);
 						callback(data, tkn);
 					} else {
 						var joinDate = new Date();
@@ -124,13 +125,32 @@ io.on('connection', function(socket) {
 	socket.on('getArtworksByDistance', function(args,
 			callback) {
 		console.log("Received fetch artworks by distance request.");
+		var longitude, latitude, minDistanceMetres;
+		if(args.longitude === undefined || args.latitude === undefined){
+			callback({
+				err : "longitude and/or latitude unsupplied"
+			});
+			return;
+		}else{
+			longitude = args.longitude;
+			latitude = args.latitude;
+		}
+		
+		if( args.minDistanceMetres === undefined){
+			minDistanceMetres = 0;
+		}else{
+			minDistanceMetres = args.minDistanceMetres;
+		}
+		
+		
+		
 		db.runCommand(
 				{
 					geoNear: "artworks",
-					near: { type: "Point", coordinates: [ args.longitude, args.latitude ] },
+					near: { type: "Point", coordinates: [ longitude, latitude ] },
 					spherical: true,
 					limit: batchSize,
-					minDistance: args.minDistanceMetres
+					minDistance: minDistanceMetres
 				}, function(err, data) {
 			if (err) {
 				console.log(err, err.stack);
@@ -155,7 +175,6 @@ sio.on('connection', socketioJwt.authorize({
 	console.log(socket.decoded_token.name + ' has connected');
 	
 	socket.on('myProfile', function(na, callback){
-		console.log("Totally worked: " + socket.decoded_token.id);
 		db.users.findOne({
 			_id : mongojs.ObjectId(socket.decoded_token.id)
 		}, function(err, data){
