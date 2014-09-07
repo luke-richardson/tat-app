@@ -4,18 +4,33 @@ angular.module('ink.controllers', [])
 
         $scope.cards = [];
 
-        $ionicLoading.show({
-            content: '<i class="icon ion-loading-c"></i>',
-            animation: 'fade-in',
-            showBackdrop: false,
-            maxWidth: 200,
-            showDelay: 50
-        });
+        $scope.moreDataCanBeLoaded = true;
 
-        QueryTats.execute(function (data) {
-            $scope.cards = data;
-            $ionicLoading.hide();
-        });
+        $scope.moreDataCanBeLoadedF = function () {
+            return $scope.moreDataCanBeLoaded;
+        };
+
+
+        $scope.loadTats = function (minDistance) {
+            QueryTats.execute(minDistance, function (data) {
+                data.forEach(function (item) {
+                    $scope.cards.push(item);
+                });
+                $scope.moreDataCanBeLoaded = data.length !== 0;
+                $scope.$broadcast('scroll.infiniteScrollComplete');
+            });
+        };
+
+
+        $scope.loadMoreTats = function () {
+            var dis = null;
+            if ($scope.cards.length === 0) {
+                dis = 0;
+            } else {
+                dis = $scope.cards[$scope.cards.length - 1].dis + 0.000000001;
+            }
+            $scope.loadTats(dis);
+        };
 
     })
 
@@ -44,7 +59,7 @@ angular.module('ink.controllers', [])
 
     .controller('AccountCtrl', function ($scope, $ionicLoading, QueryTats, LoginService) {
 
-        LoginService.checkLoggedIn(function(profile){
+        LoginService.checkLoggedIn(function (profile) {
             //onSuccess
             $scope.account = profile;
             $scope.avatarUploadMessage = "Looking good!";
@@ -59,7 +74,7 @@ angular.module('ink.controllers', [])
                 $scope.artistArtworks = data;
                 $ionicLoading.hide();
             });
-        }, function(){
+        }, function () {
             //onFailure
             $scope.account = { "artistName": "Billy no-mates",
                 "location": "Nowhere",
@@ -68,7 +83,7 @@ angular.module('ink.controllers', [])
             $scope.accountArtworks = [];
         });
 
-        $scope.logOut = function(){
+        $scope.logOut = function () {
             LoginService.logOut();
         };
 

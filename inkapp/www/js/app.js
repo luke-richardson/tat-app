@@ -15,6 +15,7 @@ angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directiv
                 facebookConnectPlugin.browserInit("331871496967792");
                 // version is optional. It refers to the version of API you may want to use.
             }
+
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins.Keyboard) {

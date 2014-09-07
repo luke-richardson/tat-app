@@ -1,7 +1,12 @@
 <ion-view title="Ink.">
     <ion-content class="has-header padding">
         <div ng-repeat="card in cards">
-            <artwork-card artwork=card></artwork-card>
+            <artwork-card artwork=card.obj></artwork-card>
         </div>
+        <ion-infinite-scroll
+                ng-if="moreDataCanBeLoadedF()"
+                on-infinite="loadMoreTats()"
+                distance="1%">
+        </ion-infinite-scroll>
     </ion-content>
 </ion-view>

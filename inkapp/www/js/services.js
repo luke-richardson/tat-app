@@ -29,11 +29,11 @@ angular.module('ink.services', [])
 
         var socket = null;
 
-        var connect = function(){
-            if(localStorage.getItem("token") !== null){
+        var connect = function () {
+            if (localStorage.getItem("token") !== null) {
                 socket = io.connect($rootScope.destination + 'sio').on('connect', function () {
                     socket.on('authenticated', function () {
-                    }).emit('authenticate', {token: localStorage.getItem("token")}).on('authenticated', function(){
+                    }).emit('authenticate', {token: localStorage.getItem("token")}).on('authenticated', function () {
                     });
                 });
             }
@@ -41,7 +41,7 @@ angular.module('ink.services', [])
 
         return {
             on: function (eventName, callback) {
-                if(socket === null) connect();
+                if (socket === null) connect();
                 socket.on(eventName, function () {
                     var args = arguments;
                     $rootScope.$apply(function () {
@@ -50,7 +50,7 @@ angular.module('ink.services', [])
                 });
             },
             emit: function (eventName, data, callback) {
-                if(socket === null) connect();
+                if (socket === null) connect();
                 socket.emit(eventName, data, function () {
                     var args = arguments;
                     $rootScope.$apply(function () {
@@ -63,42 +63,26 @@ angular.module('ink.services', [])
         }
     })
 
-    .factory('cacheMaster', function (socket) {
-        return {
-            callOrCacheSession: function (args, socketF, callback) {
-                var sArgs = socketF + angular.toJson(args);
-                if (sessionStorage.getItem(sArgs) !== null) {
-                    callback(angular.fromJson(sessionStorage.getItem(sArgs)));
-                } else {
-                    var wrappedCallback = function (data) {
-                        sessionStorage.setItem(sArgs, angular.toJson(data));
-                        callback(data);
-                    }
-                    socket.emit(socketF, args, wrappedCallback);
-                }
-
-            },
-            callOrCacheLocal: function (args, socketF, callback) {
-                var sArgs = angular.toJson(args);
-                if (localStorage.getItem(sArgs) !== null) {
-                    callback(angular.fromJson(localStorage.getItem(sArgs)));
-                } else {
-                    var wrappedCallback = function (data) {
-                        localStorage.setItem(sArgs, angular.toJson(data));
-                        callback(data);
-                    }
-                    socket.emit(socketF, args, wrappedCallback);
-                }
-
-            }
-        }
-    })
-
-    .factory('QueryTats', function (socket, cacheMaster) {
+    .factory('QueryTats', function (socket, $ionicPopup) {
         var factory = {};
 
-        factory.execute = function (callback) {
-            cacheMaster.callOrCacheSession('dashContents', 'getArtworks', callback);
+        factory.execute = function (minDistance, callback) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                //success
+                socket.emit('getArtworksByDistance', {
+                    longitude: position.coords.longitude,
+                    latitude: position.coords.latitude,
+                    minDistanceMetres: minDistance
+                }, callback);
+            }, function (err) {
+                //failure
+                $ionicPopup.confirm({
+                    title: 'This app requires GPS',
+                    template: 'Please try again.'
+                }).then(function () {
+                    navigator.app.exitApp();
+                })
+            }, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
         };
 
         factory.getTatsByArtistName = function (artistName, callback) {
@@ -108,11 +92,11 @@ angular.module('ink.services', [])
         return factory;
     })
 
-    .factory('QueryArtistById', function (socket, cacheMaster) {
+    .factory('QueryArtistById', function (socket) {
         var factory = {};
 
         factory.execute = function (artistName, callback) {
-            cacheMaster.callOrCacheSession(artistName, 'getUser', callback);
+            socket.emit('getUser', artistName, callback);
         };
 
         return factory;
@@ -123,7 +107,7 @@ angular.module('ink.services', [])
 
         var serverAuth = function (suc) {
             facebookConnectPlugin.getAccessToken(function (token) {
-                socket.emit("authenticate", token, function(profile, token) {
+                socket.emit("authenticate", token, function (profile, token) {
                     localStorage.setItem("token", token);
                     sessionStorage.setItem("myProfile", angular.toJson(profile));
                     suc(profile);
@@ -171,16 +155,16 @@ angular.module('ink.services', [])
             facebookConnectPlugin.getLoginStatus(function (sObj) {
                 if (sObj.status === 'connected') {
                     var profile = angular.fromJson(sessionStorage.getItem("myProfile"));
-                    if(profile === null){
+                    if (profile === null) {
                         var tkn = localStorage.getItem("token");
-                        if(tkn === null){
+                        if (tkn === null) {
                             serverAuth(successCallback);
-                        }else{
-                            secureSocket.emit('myProfile', {}, function(data){
-                                if(data !== null && data.err === undefined){
+                        } else {
+                            secureSocket.emit('myProfile', {}, function (data) {
+                                if (data !== null && data.err === undefined) {
                                     sessionStorage.setItem("myProfile", angular.toJson(data));
                                     successCallback(data);
-                                }else{
+                                } else {
                                     failPopup();
                                 }
                             });
@@ -199,13 +183,13 @@ angular.module('ink.services', [])
             });
         }
 
-        lgn.logOut = function(){
+        lgn.logOut = function () {
             localStorage.removeItem("token");
             sessionStorage.removeItem("myProfile")
-            facebookConnectPlugin.logout(function(){
+            facebookConnectPlugin.logout(function () {
                 //Success
                 console.log("Successfully logged out.");
-            }, function(){
+            }, function () {
                 //Failure
                 console.log("Unsuccessful log out.");
             });
