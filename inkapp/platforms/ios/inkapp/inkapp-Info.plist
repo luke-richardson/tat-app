@@ -82,15 +82,8 @@
     <key>FacebookAppID</key>
     <string>331871496967792</string>
     <key>FacebookDisplayName</key>
-    <string>Ink</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
-          <string>fb331871496967792</string>
-        </array>
-      </dict>
-    </array>
+    <string>Ink.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string></string>
   </dict>
 </plist>

@@ -2,19 +2,21 @@ var AWS = require('aws-sdk');
 AWS.config.loadFromPath('./credentials.json');
 var mongojs = require('mongojs');
 var db = mongojs.connect("localhost:27017/inkdb", [ "users", "artworks" ]);
-var https = require("https");
+var http = require("http");
+//var https = require("https");
 var fs = require('fs');
 var FB = require('fb');
 var jwt = require('jsonwebtoken');
 var key = '53f87e792215525bdfdb200e291aca83764b3d8a3dd8d74090a046e73c82d11178ae47b425f4bf6efe0f988b';
 
-//epoch is (new Date()).getTime()
 var batchSize = 3;
 
-var server = https.createServer({
-	key : fs.readFileSync('./ssl/server.key', 'utf8'),
-	cert : fs.readFileSync('./ssl/server.crt', 'utf8')
-});
+var server = http.createServer();
+
+//var server = https.createServer({
+//	key : fs.readFileSync('./ssl/server.key', 'utf8'),
+//	cert : fs.readFileSync('./ssl/server.crt', 'utf8')
+//});
 
 var port = 2118;
 
@@ -31,8 +33,6 @@ io.on('connection', function(socket) {
 	console.log("New anonymous connect.");
 
 	socket.on('authenticate', function(token, callback) {
-		console.log("tkn received: " + token);
-		console.log("callback received: " + callback);
 		console.log("Authentication request received.");
 		FB.api('me', {
 			fields: ['id', 'name', 'picture', 'email', 'first_name', 'last_name', 'name'],
@@ -71,7 +71,6 @@ io.on('connection', function(socket) {
 										id: dat2._id,
 										name: dat2.artistName
 									}, key);
-									console.log(tkn);
 									callback(dat2, tkn);
 								}
 							});
@@ -85,10 +84,9 @@ io.on('connection', function(socket) {
 		});
 	});
 
-	socket.on('getUser', function(userName, callback) {
-		// console.log("Received request for " + userName);
+	socket.on('getUser', function(userID, callback) {
 		db.users.findOne({
-			artistName : userName
+			_id : mongojs.ObjectId(userID)
 		}, function(err, data) {
 			if (err) {
 				console.log(err);
@@ -99,7 +97,7 @@ io.on('connection', function(socket) {
 	});
 
 	socket.on('getArtworks', function(args, callback) {
-		// console.log("Received fetch artworks request.");
+		console.log("Received fetch artworks request.");
 		db.artworks.find({}).limit(batchSize, function(err, data) {
 			if (err) {
 				console.log(err, err.stack);
@@ -109,10 +107,10 @@ io.on('connection', function(socket) {
 		});
 	});
 
-	socket.on('getArtworksByArtist', function(artist, callback) {
+	socket.on('getArtworksByArtist', function(artistID, callback) {
 		// console.log("Received fetch artworks by artist request.");
 		db.artworks.find({
-			artistName : artist
+			artistID : artistID
 		}).limit(batchSize, function(err, data) {
 			if (err) {
 				console.log(err, err.stack);
@@ -172,8 +170,6 @@ sio.on('connection', socketioJwt.authorize({
     server: sio,
     timeout: 15000 // 15 seconds to send the authentication message
   })).on('authenticated', function(socket) {
-	console.log(socket.decoded_token.name + ' has connected');
-	
 	socket.on('myProfile', function(na, callback){
 		db.users.findOne({
 			_id : mongojs.ObjectId(socket.decoded_token.id)
@@ -181,9 +177,50 @@ sio.on('connection', socketioJwt.authorize({
 			if (err) {
 				console.log(err, err.stack);
 			} else {
-				console.log("callback data: " + data);
 				callback(data);
 			}
 		});
 	});
+	
+	socket.on('updateUsername', function(newName){
+		db.users.update({
+			_id : mongojs.ObjectId(socket.decoded_token.id)
+		}, {
+			$set: {artistName : newName}
+		});
+		db.artworks.update({
+			artistID: socket.decoded_token.id
+		}, {
+			$set: {artistName: newName}
+		}, {
+			multi: true
+		});
+	});
+	
+	socket.on('updateLocation', function(newLocation){
+		db.users.update({
+			_id : mongojs.ObjectId(socket.decoded_token.id)
+		}, {
+			$set: {location : newLocation}
+		});
+	});
+	
+	socket.on('likePost', function(artworkId){
+		db.artworks.update({
+			_id : mongojs.ObjectId(artworkId)
+		}, {
+			$addToSet: {likes : socket.decoded_token.id}
+		});
+	});
+	
+	socket.on('unlikePost', function(artworkId){
+		db.artworks.update({
+			_id : mongojs.ObjectId(artworkId)
+		}, {
+			$pull: {likes : socket.decoded_token.id}
+		});
+	});
+	
+	
+	
 });

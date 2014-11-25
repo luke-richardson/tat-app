@@ -1,6 +1,7 @@
 angular.module('ink.services', [])
 
     .factory('socket', function ($rootScope) {
+        console.log("about to connect insecurely");
         var socket = io($rootScope.destination);
 
         return {
@@ -13,10 +14,12 @@ angular.module('ink.services', [])
                 });
             },
             emit: function (eventName, data, callback) {
+                console.log("Making a function call to " + eventName);
                 socket.emit(eventName, data, function () {
                     var args = arguments;
                     $rootScope.$apply(function () {
                         if (callback) {
+                            console.log("Callback being logged for " + eventName);
                             callback.apply(socket, args);
                         }
                     });
@@ -67,7 +70,9 @@ angular.module('ink.services', [])
         var factory = {};
 
         factory.execute = function (minDistance, callback) {
+            console.log("ABOUT TO QUERY LOCATION");
             navigator.geolocation.getCurrentPosition(function (position) {
+                console.log("UR LOCATION GOT WELL QUERIED BRUV");
                 //success
                 socket.emit('getArtworksByDistance', {
                     longitude: position.coords.longitude,
@@ -85,8 +90,8 @@ angular.module('ink.services', [])
             }, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
         };
 
-        factory.getTatsByArtistName = function (artistName, callback) {
-            socket.emit('getArtworksByArtist', artistName, callback);
+        factory.getTatsByArtistID = function (artistID, callback) {
+            socket.emit('getArtworksByArtist', artistID, callback);
         }
 
         return factory;
@@ -95,8 +100,8 @@ angular.module('ink.services', [])
     .factory('QueryArtistById', function (socket) {
         var factory = {};
 
-        factory.execute = function (artistName, callback) {
-            socket.emit('getUser', artistName, callback);
+        factory.execute = function (artistID, callback) {
+            socket.emit('getUser', artistID, callback);
         };
 
         return factory;
@@ -154,23 +159,18 @@ angular.module('ink.services', [])
 
             facebookConnectPlugin.getLoginStatus(function (sObj) {
                 if (sObj.status === 'connected') {
-                    var profile = angular.fromJson(sessionStorage.getItem("myProfile"));
-                    if (profile === null) {
-                        var tkn = localStorage.getItem("token");
-                        if (tkn === null) {
-                            serverAuth(successCallback);
-                        } else {
-                            secureSocket.emit('myProfile', {}, function (data) {
-                                if (data !== null && data.err === undefined) {
-                                    sessionStorage.setItem("myProfile", angular.toJson(data));
-                                    successCallback(data);
-                                } else {
-                                    failPopup();
-                                }
-                            });
-                        }
+                    var tkn = localStorage.getItem("token");
+                    if (tkn === null) {
+                        serverAuth(successCallback);
                     } else {
-                        successCallback(profile);
+                        secureSocket.emit('myProfile', {}, function (data) {
+                            if (data !== null && data.err === undefined) {
+                                sessionStorage.setItem("myProfile", angular.toJson(data));
+                                successCallback(data);
+                            } else {
+                                failPopup();
+                            }
+                        });
                     }
                 } else {
                     failureCallback();

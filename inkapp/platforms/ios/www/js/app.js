@@ -8,29 +8,39 @@
 angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directives'])
 
     .run(function ($ionicPlatform, $rootScope) {
-        $rootScope.destination = 'https://192.168.1.65:2118/';
+        $rootScope.destination = 'http://192.168.1.65:2118/';
         $ionicPlatform.ready(function () {
+            console.log("STARTING THE APP");
 
             if (!window.cordova) {
                 facebookConnectPlugin.browserInit("331871496967792");
                 // version is optional. It refers to the version of API you may want to use.
             }
 
+            console.log("Didn't bother with the facebook plugin CAUSE WE'RE CORDOVA");
+
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             }
+
+            console.log("Did that window shit");
+
             if (window.StatusBar) {
                 // org.apache.cordova.statusbar required
                 StatusBar.styleDefault();
             }
+
+            console.log("Set up the status bar bitch");
 
         });
     })
 
 
 .config(function ($stateProvider, $urlRouterProvider) {
+
+        console.log("Setting up the state provider");
 
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
@@ -58,7 +68,7 @@ angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directiv
             })
 
             .state('tab.artist-detail', {
-                url: '/artist/:artistName',
+                url: '/artist/:artistID',
                 views: {
                     'tab-dash': {
                         templateUrl: 'templates/artist-detail.html',

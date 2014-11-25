@@ -1,5 +1,5 @@
 <div class="card">
-    <a ng-href="#/tab/artist/{{artwork.artistName}}" class="item item-avatar">
+    <a ng-href="#/tab/artist/{{artwork.artistID}}" class="item item-avatar">
         <img ng-src={{artwork.artistAvatar}}>
 
         <h2>{{artwork.title}}</h2>
@@ -10,10 +10,10 @@
         <img ng-src={{artwork.artworkUrl}}>
     </div>
     <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" href="#">
+        <div class="tab-item" ng-click="like()">
             <i class="icon ion-thumbsup"></i>
-            {{artwork.likes}}
-        </a>
+            {{artwork.likes.length}}
+        </div>
         <a class="tab-item" href="#">
             <i class="icon ion-share"></i>
             Share

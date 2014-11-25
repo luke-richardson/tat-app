@@ -1,17 +1,18 @@
 angular.module('ink.controllers', [])
 
     .controller('DashCtrl', function ($scope, $ionicLoading, QueryTats) {
-
         $scope.cards = [];
 
         $scope.moreDataCanBeLoaded = true;
 
         $scope.moreDataCanBeLoadedF = function () {
+            console.log("Checking if data can be loaded");
             return $scope.moreDataCanBeLoaded;
         };
 
 
         $scope.loadTats = function (minDistance) {
+            console.log("LOAD TATS CALLED with distance " + minDistance);
             QueryTats.execute(minDistance, function (data) {
                 data.forEach(function (item) {
                     $scope.cards.push(item);
@@ -23,6 +24,7 @@ angular.module('ink.controllers', [])
 
 
         $scope.loadMoreTats = function () {
+            console.log("LOADIN TATS BITCH");
             var dis = null;
             if ($scope.cards.length === 0) {
                 dis = 0;
@@ -46,10 +48,10 @@ angular.module('ink.controllers', [])
             showDelay: 50
         });
 
-        QueryArtistById.execute($stateParams.artistName, function (data) {
+        QueryArtistById.execute($stateParams.artistID, function (data) {
             $scope.artist = data;
             $scope.artistPageTitle = $scope.artist.artistName + "'s profile"
-            QueryTats.getTatsByArtistName($scope.artist.artistName, function (data) {
+            QueryTats.getTatsByArtistID($scope.artist._id, function (data) {
                 $scope.artistArtworks = data;
                 $ionicLoading.hide();
             });
@@ -57,12 +59,13 @@ angular.module('ink.controllers', [])
     })
 
 
-    .controller('AccountCtrl', function ($scope, $ionicLoading, QueryTats, LoginService) {
+    .controller('AccountCtrl', function ($scope, $ionicLoading, QueryTats, LoginService, secureSocket, $ionicPopup) {
+        console.log("Entering the account controller");
 
         LoginService.checkLoggedIn(function (profile) {
             //onSuccess
             $scope.account = profile;
-            $scope.avatarUploadMessage = "Looking good!";
+            $scope.avatarUploadMessage = profile.firstName + " " + profile.lastName;
             $ionicLoading.show({
                 content: '<i class="icon ion-loading-c"></i>',
                 animation: 'fade-in',
@@ -70,10 +73,70 @@ angular.module('ink.controllers', [])
                 maxWidth: 200,
                 showDelay: 50
             });
-            QueryTats.getTatsByArtistName($scope.account.artistName, function (data) {
+
+            QueryTats.getTatsByArtistID($scope.account._id, function (data) {
                 $scope.artistArtworks = data;
                 $ionicLoading.hide();
             });
+
+            $scope.changeUsername = function () {
+                $scope.data = {};
+                $ionicPopup.show({
+                    template: '<input type="text" ng-model="data.artistName">',
+                    title: 'Change your display name',
+                    subTitle: 'Nothing too naughty',
+                    scope: $scope,
+                    buttons: [
+                        { text: 'Cancel' },
+                        {
+                            text: '<b>Save</b>',
+                            type: 'button-positive',
+                            onTap: function(e) {
+                                if (!$scope.data.artistName) {
+                                    e.preventDefault();
+                                } else {
+                                    return $scope.data.artistName;
+                                }
+                            }
+                        }
+                    ]
+                }).then(function(res) {
+                    if(res){
+                        $scope.account.artistName = res;
+                        secureSocket.emit("updateUsername", res, null);
+                    }
+                });
+            };
+
+            $scope.changeLocation = function () {
+                $scope.data = {};
+                $ionicPopup.show({
+                    template: '<input type="text" ng-model="data.location">',
+                    title: 'Change your location',
+                    subTitle: 'Where are you based?',
+                    scope: $scope,
+                    buttons: [
+                        { text: 'Cancel' },
+                        {
+                            text: '<b>Save</b>',
+                            type: 'button-positive',
+                            onTap: function(e) {
+                                if (!$scope.data.location) {
+                                    e.preventDefault();
+                                } else {
+                                    return $scope.data.location;
+                                }
+                            }
+                        }
+                    ]
+                }).then(function(res) {
+                    if(res){
+                        $scope.account.location = res;
+                        secureSocket.emit("updateLocation", res, null);
+                    }
+                });
+            };
+
         }, function () {
             //onFailure
             $scope.account = { "artistName": "Billy no-mates",

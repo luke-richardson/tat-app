@@ -38,6 +38,9 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
     <name>inkapp</name>
     <description>
         An Ionic Framework and Cordova project.
@@ -47,11 +50,11 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <plugin name="org.apache.cordova.geolocation" value="org.apache.cordova.geolocation" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
+    <code>
+    </code>
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
-    <feature name="StatusBar">
-        <param name="ios-package" onload="true" value="CDVStatusBar" />
-    </feature>
 </widget>

@@ -89,7 +89,7 @@
         <config-file target="*-Info.plist" parent="FacebookDisplayName">
             <string>Ink.</string>
         </config-file>
-        
+
         <!-- Facebook framework -->
         <framework src="platforms/ios/FacebookSDK.framework" custom="true" />
                 

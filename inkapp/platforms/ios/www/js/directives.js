@@ -1,6 +1,6 @@
 angular.module('ink.directives', [])
 
-    .directive('artworkCard', function() {
+    .directive('artworkCard', ['LoginService', function(LoginService) {
 
         return {
             restrict: 'E',
@@ -9,4 +9,4 @@ angular.module('ink.directives', [])
             },
             templateUrl: 'templates/art-card.html'
         };
-    })
+    }])

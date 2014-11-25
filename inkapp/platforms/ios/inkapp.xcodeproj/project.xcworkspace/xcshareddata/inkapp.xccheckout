@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>AED3A324-6B64-4D35-A712-475B7786D34E</string>
+	<string>72DFFC34-A3BE-4B8A-9FEB-174A1E097337</string>
 	<key>IDESourceControlProjectName</key>
 	<string>inkapp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>0CFAC0BD-CCDD-4D35-95D4-AB47E84218A0</key>
+		<key>C6DC3B90EBDFE3BF8B19E27CB7212EC372454C6D</key>
 		<string>https://github.com/luke-richardson/tat-app.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>inkapp/platforms/ios/inkapp.xcodeproj/project.xcworkspace</string>
+	<string>inkapp/platforms/ios/inkapp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>0CFAC0BD-CCDD-4D35-95D4-AB47E84218A0</key>
+		<key>C6DC3B90EBDFE3BF8B19E27CB7212EC372454C6D</key>
 		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/luke-richardson/tat-app.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>0CFAC0BD-CCDD-4D35-95D4-AB47E84218A0</string>
+	<string>C6DC3B90EBDFE3BF8B19E27CB7212EC372454C6D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>0CFAC0BD-CCDD-4D35-95D4-AB47E84218A0</string>
+			<string>C6DC3B90EBDFE3BF8B19E27CB7212EC372454C6D</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Ink.</string>
 		</dict>
