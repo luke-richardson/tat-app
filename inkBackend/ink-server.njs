@@ -1,5 +1,5 @@
-//var AWS = require('aws-sdk');
-//AWS.config.loadFromPath('./credentials.json');
+var AWS = require('aws-sdk');
+AWS.config.loadFromPath('./credentials.json');
 var mongojs = require('mongojs');
 var db = mongojs.connect("localhost:27017/inkdb", [ "users", "artworks" ]);
 var http = require("http");
