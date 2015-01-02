@@ -1,6 +1,8 @@
 angular.module('ink.controllers', [])
 
     .controller('DashCtrl', function ($scope, $ionicLoading, QueryTats) {
+        console.log("Dash controller is being started you fag");
+
         $scope.cards = [];
 
         $scope.moreDataCanBeLoaded = true;
