@@ -2,7 +2,7 @@ angular.module('ink.services', [])
 
     .factory('socket', function ($rootScope) {
         console.log("about to connect insecurely");
-        var socket = io($rootScope.destination);
+        var socket = io.connect($rootScope.destination);
 
         return {
             on: function (eventName, callback) {
@@ -30,40 +30,40 @@ angular.module('ink.services', [])
 
     .factory('secureSocket', function ($rootScope) {
 
-        var socket = null;
-
-        var connect = function () {
-            if (localStorage.getItem("token") !== null) {
-                socket = io.connect($rootScope.destination + 'sio').on('connect', function () {
-                    socket.on('authenticated', function () {
-                    }).emit('authenticate', {token: localStorage.getItem("token")}).on('authenticated', function () {
-                    });
-                });
-            }
-        }
-
-        return {
-            on: function (eventName, callback) {
-                if (socket === null) connect();
-                socket.on(eventName, function () {
-                    var args = arguments;
-                    $rootScope.$apply(function () {
-                        callback.apply(socket, args);
-                    });
-                });
-            },
-            emit: function (eventName, data, callback) {
-                if (socket === null) connect();
-                socket.emit(eventName, data, function () {
-                    var args = arguments;
-                    $rootScope.$apply(function () {
-                        if (callback) {
-                            callback.apply(socket, args);
-                        }
-                    });
-                })
-            }
-        }
+        //var socket = null;
+        //
+        //var connect = function () {
+        //    if (localStorage.getItem("token") !== null) {
+        //        socket = io.connect($rootScope.destination + 'sio').on('connect', function () {
+        //            socket.on('authenticated', function () {
+        //            }).emit('authenticate', {token: localStorage.getItem("token")}).on('authenticated', function () {
+        //            });
+        //        });
+        //    }
+        //}
+        //
+        //return {
+        //    on: function (eventName, callback) {
+        //        if (socket === null) connect();
+        //        socket.on(eventName, function () {
+        //            var args = arguments;
+        //            $rootScope.$apply(function () {
+        //                callback.apply(socket, args);
+        //            });
+        //        });
+        //    },
+        //    emit: function (eventName, data, callback) {
+        //        if (socket === null) connect();
+        //        socket.emit(eventName, data, function () {
+        //            var args = arguments;
+        //            $rootScope.$apply(function () {
+        //                if (callback) {
+        //                    callback.apply(socket, args);
+        //                }
+        //            });
+        //        })
+        //    }
+        //}
     })
 
     .factory('QueryTats', function (socket, $ionicPopup) {
