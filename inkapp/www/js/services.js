@@ -2,7 +2,7 @@ angular.module('ink.services', [])
 
     .factory('socket', function ($rootScope) {
         console.log("about to connect insecurely");
-        var socket = io($rootScope.destination);
+        var socket = io.connect($rootScope.destination);
 
         return {
             on: function (eventName, callback) {

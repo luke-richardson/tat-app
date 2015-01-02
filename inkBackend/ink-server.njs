@@ -122,7 +122,6 @@ io.on('connection', function(socket) {
 
 	socket.on('getArtworksByDistance', function(args,
 			callback) {
-		console.log("Received fetch artworks by distance request.");
 		var longitude, latitude, minDistanceMetres;
 		if(args.longitude === undefined || args.latitude === undefined){
 			callback({
@@ -153,6 +152,7 @@ io.on('connection', function(socket) {
 			if (err) {
 				console.log(err, err.stack);
 			} else {
+				console.log("Received fetch artworks by distance request, response length: " + data.results.length);
 				callback(data.results);
 			}
 		});

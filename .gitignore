@@ -2,3 +2,5 @@
 *.keystore
 
 inkBackend/credentials.json
+
+*.xml
