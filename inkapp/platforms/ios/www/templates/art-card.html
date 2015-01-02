@@ -10,10 +10,10 @@
         <img ng-src={{artwork.artworkUrl}}>
     </div>
     <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" href="#">
+        <div class="tab-item" ng-click="like()">
             <i class="icon ion-thumbsup"></i>
             {{artwork.likes.length}}
-        </a>
+        </div>
         <a class="tab-item" href="#">
             <i class="icon ion-share"></i>
             Share

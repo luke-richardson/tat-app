@@ -8,7 +8,7 @@
 angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directives'])
 
     .run(function ($ionicPlatform, $rootScope) {
-        $rootScope.destination = 'http://192.168.1.65:2118/';
+        $rootScope.destination = 'http://192.168.1.73:2118/';
         $ionicPlatform.ready(function () {
             console.log("STARTING THE APP");
 

@@ -248,3 +248,46 @@
 2014-11-19 14:59:31.585 inkapp[2571:50255] Checking if data can be loaded
 2014-11-19 14:59:31.585 inkapp[2571:50255] Checking if data can be loaded
 2014-11-19 14:59:33.993 inkapp[2571:50329] Terminating since there is no system app.
+2015-01-02 18:01:56.580 inkapp[3615:3458688] Apache Cordova native platform version 3.6.3 is starting.
+2015-01-02 18:01:56.581 inkapp[3615:3458688] Multi-tasking -> Device: YES, App: YES
+2015-01-02 18:01:56.600 inkapp[3615:3458688] Unlimited access to network resources
+2015-01-02 18:01:56.983 inkapp[3615:3458688] [CDVTimer][keyboard] 0.051975ms
+2015-01-02 18:01:56.984 inkapp[3615:3458688] Init FacebookConnect Session
+2015-01-02 18:01:56.985 inkapp[3615:3458688] [CDVTimer][facebookconnectplugin] 1.457989ms
+2015-01-02 18:01:56.985 inkapp[3615:3458688] [CDVTimer][TotalPluginStartup] 1.744986ms
+2015-01-02 18:01:57.086 inkapp[3615:3458688] Resetting plugins due to page load.
+2015-01-02 18:01:57.385 inkapp[3615:3458688] Finished load of: file:///Users/neocloudeh/Library/Developer/CoreSimulator/Devices/E763D788-A12F-42FF-86B7-2F3C63F647F4/data/Containers/Bundle/Application/85A51567-FF48-46C4-9561-9C91D7779EEE/inkapp.app/www/index.html#/tab/dash
+2015-01-02 18:01:57.648 inkapp[3615:3458688] STARTING THE APP
+2015-01-02 18:01:57.648 inkapp[3615:3458688] Didn't bother with the facebook plugin CAUSE WE'RE CORDOVA
+2015-01-02 18:01:57.648 inkapp[3615:3458688] Did that window shit
+2015-01-02 18:01:57.648 inkapp[3615:3458688] Set up the status bar bitch
+2015-01-02 18:02:00.056 inkapp[3615:3458688] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-02 18:02:00.056 inkapp[3615:3458688] Making a function call to getArtworksByDistance
+2015-01-02 18:02:00.084 inkapp[3615:3458688] Callback being logged for getArtworksByDistance
+2015-01-02 18:02:00.084 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-02 18:02:00.084 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-02 18:02:00.088 inkapp[3615:3458688] LOADIN TATS BITCH
+2015-01-02 18:02:00.088 inkapp[3615:3458688] LOAD TATS CALLED with distance 4120440.548521854
+2015-01-02 18:02:00.088 inkapp[3615:3458688] ABOUT TO QUERY LOCATION
+2015-01-02 18:02:00.092 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-02 18:02:00.124 inkapp[3615:3458688] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-02 18:02:00.125 inkapp[3615:3458688] Making a function call to getArtworksByDistance
+2015-01-02 18:02:00.133 inkapp[3615:3458688] Callback being logged for getArtworksByDistance
+2015-01-02 18:02:00.133 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-02 18:02:00.133 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-02 18:02:02.545 inkapp[3615:3458688] Entering the account controller
+2015-01-02 18:02:03.622 inkapp[3615:3458688] FBSDKLog: Cannot use the Facebook app or Safari to authorize, fb331871496967792 is not registered as a URL Scheme
+2015-01-02 18:02:03.792 inkapp[3615:3458688] THREAD WARNING: ['FacebookConnectPlugin'] took '177.891846' ms. Plugin should use a background thread.
+2015-01-02 18:02:08.889 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-02 18:02:08.889 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-02 18:02:08.894 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-02 18:02:08.894 inkapp[3615:3458688] LOADIN TATS BITCH
+2015-01-02 18:02:08.894 inkapp[3615:3458688] LOAD TATS CALLED with distance 0
+2015-01-02 18:02:08.894 inkapp[3615:3458688] ABOUT TO QUERY LOCATION
+2015-01-02 18:02:08.896 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-02 18:02:08.898 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-02 18:02:08.899 inkapp[3615:3458688] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-02 18:02:08.899 inkapp[3615:3458688] Making a function call to getArtworksByDistance
+2015-01-02 18:02:08.940 inkapp[3615:3458688] Callback being logged for getArtworksByDistance
+2015-01-02 18:02:08.941 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-02 18:02:08.941 inkapp[3615:3458688] Checking if data can be loaded
