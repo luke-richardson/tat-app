@@ -2,7 +2,7 @@ angular.module('ink.services', [])
 
     .factory('socket', function ($rootScope) {
         console.log("about to connect insecurely");
-        var socket = io($rootScope.destination);
+        var socket = io.connect($rootScope.destination);
 
         return {
             on: function (eventName, callback) {
@@ -155,6 +155,9 @@ angular.module('ink.services', [])
             });
         };
 
+
+        //This ALWAYS fetches the user's profile from the server.
+        //This could be improved... but isn't super urgent I guess.
         lgn.checkLoggedIn = function (successCallback, failureCallback) {
 
             facebookConnectPlugin.getLoginStatus(function (sObj) {
@@ -163,14 +166,19 @@ angular.module('ink.services', [])
                     if (tkn === null) {
                         serverAuth(successCallback);
                     } else {
-                        secureSocket.emit('myProfile', {}, function (data) {
-                            if (data !== null && data.err === undefined) {
-                                sessionStorage.setItem("myProfile", angular.toJson(data));
-                                successCallback(data);
-                            } else {
-                                failPopup();
-                            }
-                        });
+                        var storedProf = sessionStorage.getItem("myProfile");
+                        if(storedProf){
+                            successCallback(angular.fromJson(storedProf));
+                        }else{
+                            secureSocket.emit('myProfile', {}, function (data) {
+                                if (data !== null && data.err === undefined) {
+                                    sessionStorage.setItem("myProfile", angular.toJson(data));
+                                    successCallback(data);
+                                } else {
+                                    failPopup();
+                                }
+                            });
+                        }
                     }
                 } else {
                     failureCallback();

@@ -291,3 +291,268 @@
 2015-01-02 18:02:08.940 inkapp[3615:3458688] Callback being logged for getArtworksByDistance
 2015-01-02 18:02:08.941 inkapp[3615:3458688] Checking if data can be loaded
 2015-01-02 18:02:08.941 inkapp[3615:3458688] Checking if data can be loaded
+2015-01-13 21:08:35.567 inkapp[13861:12257687] Apache Cordova native platform version 3.6.3 is starting.
+2015-01-13 21:08:35.568 inkapp[13861:12257687] Multi-tasking -> Device: YES, App: YES
+2015-01-13 21:08:35.585 inkapp[13861:12257687] Unlimited access to network resources
+2015-01-13 21:08:35.978 inkapp[13861:12257687] [CDVTimer][keyboard] 0.054002ms
+2015-01-13 21:08:35.978 inkapp[13861:12257687] Init FacebookConnect Session
+2015-01-13 21:08:35.979 inkapp[13861:12257687] [CDVTimer][facebookconnectplugin] 1.341999ms
+2015-01-13 21:08:35.979 inkapp[13861:12257687] [CDVTimer][TotalPluginStartup] 1.648009ms
+2015-01-13 21:08:36.124 inkapp[13861:12257687] Resetting plugins due to page load.
+2015-01-13 21:08:36.532 inkapp[13861:12257687] Finished load of: file:///Users/neocloudeh/Library/Developer/CoreSimulator/Devices/E763D788-A12F-42FF-86B7-2F3C63F647F4/data/Containers/Bundle/Application/F0944BD6-3580-4A83-A4A3-5B42F5AE8C18/inkapp.app/www/index.html#/tab/dash
+2015-01-13 21:08:36.840 inkapp[13861:12257687] STARTING THE APP
+2015-01-13 21:08:36.840 inkapp[13861:12257687] Didn't bother with the facebook plugin CAUSE WE'RE CORDOVA
+2015-01-13 21:08:36.841 inkapp[13861:12257687] Did that window shit
+2015-01-13 21:08:36.841 inkapp[13861:12257687] Set up the status bar bitch
+2015-01-13 21:08:39.144 inkapp[13861:12257687] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-13 21:08:39.145 inkapp[13861:12257687] Making a function call to getArtworksByDistance
+2015-01-13 21:08:39.199 inkapp[13861:12257687] Callback being logged for getArtworksByDistance
+2015-01-13 21:08:39.199 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:39.199 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:39.212 inkapp[13861:12257687] LOADIN TATS BITCH
+2015-01-13 21:08:39.212 inkapp[13861:12257687] LOAD TATS CALLED with distance 4120440.548521854
+2015-01-13 21:08:39.212 inkapp[13861:12257687] ABOUT TO QUERY LOCATION
+2015-01-13 21:08:39.220 inkapp[13861:12257687] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-13 21:08:39.220 inkapp[13861:12257687] Making a function call to getArtworksByDistance
+2015-01-13 21:08:39.231 inkapp[13861:12257687] Callback being logged for getArtworksByDistance
+2015-01-13 21:08:39.231 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:39.231 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:39.244 inkapp[13861:12257687] LOADIN TATS BITCH
+2015-01-13 21:08:39.244 inkapp[13861:12257687] LOAD TATS CALLED with distance 4120440.548521854
+2015-01-13 21:08:39.244 inkapp[13861:12257687] ABOUT TO QUERY LOCATION
+2015-01-13 21:08:39.244 inkapp[13861:12257687] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-13 21:08:39.245 inkapp[13861:12257687] Making a function call to getArtworksByDistance
+2015-01-13 21:08:39.249 inkapp[13861:12257687] Callback being logged for getArtworksByDistance
+2015-01-13 21:08:39.250 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:43.332 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:43.332 inkapp[13861:12257687] Entering the account controller
+2015-01-13 21:08:43.333 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:43.333 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:43.358 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:43.358 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:43.358 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:43.359 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:43.359 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:43.359 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:44.321 inkapp[13861:12257687] FBSDKLog: Cannot use the Facebook app or Safari to authorize, fb331871496967792 is not registered as a URL Scheme
+2015-01-13 21:08:44.490 inkapp[13861:12257687] THREAD WARNING: ['FacebookConnectPlugin'] took '175.442871' ms. Plugin should use a background thread.
+2015-01-13 21:08:44.491 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:44.506 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:44.567 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:44.714 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:52.134 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:52.134 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:52.144 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:52.144 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:52.145 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:54.600 inkapp[13861:12257687] FUNK YEAH: Supakitch
+2015-01-13 21:08:54.601 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:54.601 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:55.759 inkapp[13861:12257687] FUNK YEAH: Supakitch
+2015-01-13 21:08:55.759 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:55.760 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:56.062 inkapp[13861:12257687] FUNK YEAH: Supakitch
+2015-01-13 21:08:56.063 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:56.063 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:56.278 inkapp[13861:12257687] FUNK YEAH: Supakitch
+2015-01-13 21:08:56.278 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:56.279 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:56.500 inkapp[13861:12257687] FUNK YEAH: Supakitch
+2015-01-13 21:08:56.501 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:56.501 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:56.850 inkapp[13861:12257687] FUNK YEAH: Supakitch
+2015-01-13 21:08:56.850 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:56.851 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:57.018 inkapp[13861:12257687] FUNK YEAH: Supakitch
+2015-01-13 21:08:57.019 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:57.019 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:57.412 inkapp[13861:12257687] FUNK YEAH: Supakitch
+2015-01-13 21:08:57.413 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:57.413 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:57.635 inkapp[13861:12257687] FUNK YEAH: Supakitch
+2015-01-13 21:08:57.636 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:08:57.636 inkapp[13861:12257687] Checking if data can be loaded
+2015-01-13 21:11:30.009 inkapp[14199:12284368] Apache Cordova native platform version 3.6.3 is starting.
+2015-01-13 21:11:30.010 inkapp[14199:12284368] Multi-tasking -> Device: YES, App: YES
+2015-01-13 21:11:30.015 inkapp[14199:12284368] Unlimited access to network resources
+2015-01-13 21:11:30.184 inkapp[14199:12284368] [CDVTimer][keyboard] 0.056028ms
+2015-01-13 21:11:30.185 inkapp[14199:12284368] Init FacebookConnect Session
+2015-01-13 21:11:30.186 inkapp[14199:12284368] [CDVTimer][facebookconnectplugin] 1.255989ms
+2015-01-13 21:11:30.186 inkapp[14199:12284368] [CDVTimer][TotalPluginStartup] 1.554012ms
+2015-01-13 21:11:30.224 inkapp[14199:12284368] Resetting plugins due to page load.
+2015-01-13 21:11:30.450 inkapp[14199:12284368] Finished load of: file:///Users/neocloudeh/Library/Developer/CoreSimulator/Devices/E763D788-A12F-42FF-86B7-2F3C63F647F4/data/Containers/Bundle/Application/3C972BB7-2679-4634-8DE7-7927EED0D377/inkapp.app/www/index.html#/tab/dash
+2015-01-13 21:11:31.390 inkapp[14199:12284368] STARTING THE APP
+2015-01-13 21:11:31.390 inkapp[14199:12284368] Didn't bother with the facebook plugin CAUSE WE'RE CORDOVA
+2015-01-13 21:11:31.390 inkapp[14199:12284368] Did that window shit
+2015-01-13 21:11:31.390 inkapp[14199:12284368] Set up the status bar bitch
+2015-01-13 21:11:36.836 inkapp[14199:12284368] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-13 21:11:36.836 inkapp[14199:12284368] Making a function call to getArtworksByDistance
+2015-01-13 21:11:36.862 inkapp[14199:12284368] Callback being logged for getArtworksByDistance
+2015-01-13 21:11:36.863 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:36.863 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:36.880 inkapp[14199:12284368] LOADIN TATS BITCH
+2015-01-13 21:11:36.881 inkapp[14199:12284368] LOAD TATS CALLED with distance 4120461.127546144
+2015-01-13 21:11:36.881 inkapp[14199:12284368] ABOUT TO QUERY LOCATION
+2015-01-13 21:11:36.890 inkapp[14199:12284368] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-13 21:11:36.890 inkapp[14199:12284368] Making a function call to getArtworksByDistance
+2015-01-13 21:11:36.900 inkapp[14199:12284368] Callback being logged for getArtworksByDistance
+2015-01-13 21:11:36.900 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:36.900 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:36.914 inkapp[14199:12284368] LOADIN TATS BITCH
+2015-01-13 21:11:36.915 inkapp[14199:12284368] LOAD TATS CALLED with distance 4120461.127546144
+2015-01-13 21:11:36.915 inkapp[14199:12284368] ABOUT TO QUERY LOCATION
+2015-01-13 21:11:36.915 inkapp[14199:12284368] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-13 21:11:36.915 inkapp[14199:12284368] Making a function call to getArtworksByDistance
+2015-01-13 21:11:36.919 inkapp[14199:12284368] Callback being logged for getArtworksByDistance
+2015-01-13 21:11:36.919 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:38.421 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:38.421 inkapp[14199:12284368] Making a function call to getUser
+2015-01-13 21:11:38.519 inkapp[14199:12284368] Callback being logged for getUser
+2015-01-13 21:11:38.519 inkapp[14199:12284368] Making a function call to getArtworksByArtist
+2015-01-13 21:11:38.569 inkapp[14199:12284368] Callback being logged for getArtworksByArtist
+2015-01-13 21:11:44.583 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:44.583 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:44.588 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:44.588 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:44.602 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:44.859 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:45.069 inkapp[14199:12284368] Checking if data can be loaded
+2015-01-13 21:11:47.186 inkapp[14199:12284420] Terminating since there is no system app.
+2015-01-19 00:01:13.214 inkapp[5405:3089321] Apache Cordova native platform version 3.6.3 is starting.
+2015-01-19 00:01:13.215 inkapp[5405:3089321] Multi-tasking -> Device: YES, App: YES
+2015-01-19 00:01:13.231 inkapp[5405:3089321] Unlimited access to network resources
+2015-01-19 00:01:13.605 inkapp[5405:3089321] [CDVTimer][keyboard] 0.050008ms
+2015-01-19 00:01:13.605 inkapp[5405:3089321] Init FacebookConnect Session
+2015-01-19 00:01:13.606 inkapp[5405:3089321] [CDVTimer][facebookconnectplugin] 1.249969ms
+2015-01-19 00:01:13.606 inkapp[5405:3089321] [CDVTimer][TotalPluginStartup] 1.529992ms
+2015-01-19 00:01:13.749 inkapp[5405:3089321] Resetting plugins due to page load.
+2015-01-19 00:01:14.033 inkapp[5405:3089321] Finished load of: file:///Users/neocloudeh/Library/Developer/CoreSimulator/Devices/E763D788-A12F-42FF-86B7-2F3C63F647F4/data/Containers/Bundle/Application/DCFD1B72-B4AD-4DA2-B8FE-7D42FF6477A2/inkapp.app/www/index.html#/tab/dash
+2015-01-19 00:01:14.400 inkapp[5405:3089321] STARTING THE APP
+2015-01-19 00:01:14.400 inkapp[5405:3089321] Didn't bother with the facebook plugin CAUSE WE'RE CORDOVA
+2015-01-19 00:01:14.400 inkapp[5405:3089321] Did that window shit
+2015-01-19 00:01:14.400 inkapp[5405:3089321] Set up the status bar bitch
+2015-01-19 00:01:15.765 inkapp[5405:3089321] Checking if data can be loaded
+2015-01-19 00:01:15.765 inkapp[5405:3089321] Checking if data can be loaded
+2015-01-19 00:01:15.765 inkapp[5405:3089321] Checking if data can be loaded
+2015-01-19 00:01:17.274 inkapp[5405:3089321] Checking if data can be loaded
+2015-01-19 00:01:17.348 inkapp[5405:3089321] Checking if data can be loaded
+2015-01-19 00:01:17.523 inkapp[5405:3089321] Checking if data can be loaded
+2015-01-19 00:01:17.673 inkapp[5405:3089321] Checking if data can be loaded
+2015-01-19 00:16:48.170 inkapp[6344:3158474] Apache Cordova native platform version 3.6.3 is starting.
+2015-01-19 00:16:48.171 inkapp[6344:3158474] Multi-tasking -> Device: YES, App: YES
+2015-01-19 00:16:48.176 inkapp[6344:3158474] Unlimited access to network resources
+2015-01-19 00:16:48.344 inkapp[6344:3158474] [CDVTimer][keyboard] 0.054002ms
+2015-01-19 00:16:48.344 inkapp[6344:3158474] Init FacebookConnect Session
+2015-01-19 00:16:48.346 inkapp[6344:3158474] [CDVTimer][facebookconnectplugin] 1.477003ms
+2015-01-19 00:16:48.346 inkapp[6344:3158474] [CDVTimer][TotalPluginStartup] 1.789033ms
+2015-01-19 00:16:48.382 inkapp[6344:3158474] Resetting plugins due to page load.
+2015-01-19 00:16:48.655 inkapp[6344:3158474] Finished load of: file:///Users/neocloudeh/Library/Developer/CoreSimulator/Devices/E763D788-A12F-42FF-86B7-2F3C63F647F4/data/Containers/Bundle/Application/F2E83EFD-3234-4E66-8B1A-4E9F2F0D606E/inkapp.app/www/index.html#/tab/dash
+2015-01-19 00:16:49.062 inkapp[6344:3158474] STARTING THE APP
+2015-01-19 00:16:49.062 inkapp[6344:3158474] Didn't bother with the facebook plugin CAUSE WE'RE CORDOVA
+2015-01-19 00:16:49.062 inkapp[6344:3158474] Did that window shit
+2015-01-19 00:16:49.062 inkapp[6344:3158474] Set up the status bar bitch
+2015-01-19 00:16:54.891 inkapp[6344:3158474] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-19 00:16:54.891 inkapp[6344:3158474] Making a function call to getArtworksByDistance
+2015-01-19 00:16:54.949 inkapp[6344:3158474] Callback being logged for getArtworksByDistance
+2015-01-19 00:16:54.949 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:54.949 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:54.966 inkapp[6344:3158474] LOADIN TATS BITCH
+2015-01-19 00:16:54.966 inkapp[6344:3158474] LOAD TATS CALLED with distance 4120461.127546144
+2015-01-19 00:16:54.966 inkapp[6344:3158474] ABOUT TO QUERY LOCATION
+2015-01-19 00:16:54.974 inkapp[6344:3158474] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-19 00:16:54.974 inkapp[6344:3158474] Making a function call to getArtworksByDistance
+2015-01-19 00:16:54.992 inkapp[6344:3158474] Callback being logged for getArtworksByDistance
+2015-01-19 00:16:54.993 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:54.993 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:55.000 inkapp[6344:3158474] LOADIN TATS BITCH
+2015-01-19 00:16:55.000 inkapp[6344:3158474] LOAD TATS CALLED with distance 4120461.127546144
+2015-01-19 00:16:55.000 inkapp[6344:3158474] ABOUT TO QUERY LOCATION
+2015-01-19 00:16:55.001 inkapp[6344:3158474] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-19 00:16:55.001 inkapp[6344:3158474] Making a function call to getArtworksByDistance
+2015-01-19 00:16:55.006 inkapp[6344:3158474] Callback being logged for getArtworksByDistance
+2015-01-19 00:16:55.006 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:57.569 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:57.569 inkapp[6344:3158474] Entering the account controller
+2015-01-19 00:16:57.570 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:57.570 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:57.598 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:57.598 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:57.598 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:57.598 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:57.598 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:57.598 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:58.536 inkapp[6344:3158474] FBSDKLog: Cannot use the Facebook app or Safari to authorize, fb331871496967792 is not registered as a URL Scheme
+2015-01-19 00:16:58.694 inkapp[6344:3158474] THREAD WARNING: ['FacebookConnectPlugin'] took '164.576904' ms. Plugin should use a background thread.
+2015-01-19 00:16:58.695 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:58.709 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:58.781 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:16:58.928 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:29.400 inkapp[6344:3158474] Making a function call to authenticate
+2015-01-19 00:17:29.642 inkapp[6344:3158474] Callback being logged for authenticate
+2015-01-19 00:17:29.643 inkapp[6344:3158474] Making a function call to getArtworksByArtist
+2015-01-19 00:17:29.643 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:29.643 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:29.650 inkapp[6344:3158474] Callback being logged for getArtworksByArtist
+2015-01-19 00:17:29.650 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:31.129 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:31.129 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:31.140 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:31.140 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:31.140 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:54.896 inkapp[6344:3158474] LIKE called on: Supakitch
+2015-01-19 00:17:54.897 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:54.906 inkapp[6344:3158474] We're logged in - going to invocate the like function
+2015-01-19 00:17:54.906 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:54.910 inkapp[6344:3158474] New likes array is: 54818515966aa101143bc0a8
+2015-01-19 00:17:54.910 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:56.551 inkapp[6344:3158474] LIKE called on: Supakitch
+2015-01-19 00:17:56.552 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:56.556 inkapp[6344:3158474] We're logged in - going to invocate the like function
+2015-01-19 00:17:56.556 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:17:56.558 inkapp[6344:3158474] New likes array is: 54818515966aa101143bc0a8
+2015-01-19 00:17:56.559 inkapp[6344:3158474] Checking if data can be loaded
+2015-01-19 00:44:51.931 inkapp[8595:3289360] Apache Cordova native platform version 3.6.3 is starting.
+2015-01-19 00:44:51.932 inkapp[8595:3289360] Multi-tasking -> Device: YES, App: YES
+2015-01-19 00:44:51.946 inkapp[8595:3289360] Unlimited access to network resources
+2015-01-19 00:44:52.296 inkapp[8595:3289360] [CDVTimer][keyboard] 0.050008ms
+2015-01-19 00:44:52.296 inkapp[8595:3289360] Init FacebookConnect Session
+2015-01-19 00:44:52.299 inkapp[8595:3289360] [CDVTimer][facebookconnectplugin] 3.415048ms
+2015-01-19 00:44:52.299 inkapp[8595:3289360] [CDVTimer][TotalPluginStartup] 3.717005ms
+2015-01-19 00:44:52.399 inkapp[8595:3289360] Resetting plugins due to page load.
+2015-01-19 00:44:52.667 inkapp[8595:3289360] Finished load of: file:///Users/neocloudeh/Library/Developer/CoreSimulator/Devices/E763D788-A12F-42FF-86B7-2F3C63F647F4/data/Containers/Bundle/Application/46BADB95-E9AB-40B5-8EB9-12443414A770/inkapp.app/www/index.html#/tab/dash
+2015-01-19 00:44:52.991 inkapp[8595:3289360] STARTING THE APP
+2015-01-19 00:44:52.991 inkapp[8595:3289360] Didn't bother with the facebook plugin CAUSE WE'RE CORDOVA
+2015-01-19 00:44:52.992 inkapp[8595:3289360] Did that window shit
+2015-01-19 00:44:52.992 inkapp[8595:3289360] Set up the status bar bitch
+2015-01-19 00:44:55.820 inkapp[8595:3289360] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-19 00:44:55.820 inkapp[8595:3289360] Making a function call to getArtworksByDistance
+2015-01-19 00:44:55.829 inkapp[8595:3289360] Callback being logged for getArtworksByDistance
+2015-01-19 00:44:55.829 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:55.846 inkapp[8595:3289360] LOADIN TATS BITCH
+2015-01-19 00:44:55.846 inkapp[8595:3289360] LOAD TATS CALLED with distance 4120431.458901632
+2015-01-19 00:44:55.846 inkapp[8595:3289360] ABOUT TO QUERY LOCATION
+2015-01-19 00:44:55.852 inkapp[8595:3289360] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-19 00:44:55.852 inkapp[8595:3289360] Making a function call to getArtworksByDistance
+2015-01-19 00:44:55.858 inkapp[8595:3289360] Callback being logged for getArtworksByDistance
+2015-01-19 00:44:55.858 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:55.858 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:55.861 inkapp[8595:3289360] LOADIN TATS BITCH
+2015-01-19 00:44:55.861 inkapp[8595:3289360] LOAD TATS CALLED with distance 4120431.458901632
+2015-01-19 00:44:55.861 inkapp[8595:3289360] ABOUT TO QUERY LOCATION
+2015-01-19 00:44:55.861 inkapp[8595:3289360] UR LOCATION GOT WELL QUERIED BRUV
+2015-01-19 00:44:55.862 inkapp[8595:3289360] Making a function call to getArtworksByDistance
+2015-01-19 00:44:55.864 inkapp[8595:3289360] Callback being logged for getArtworksByDistance
+2015-01-19 00:44:55.864 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:58.121 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:58.121 inkapp[8595:3289360] Entering the account controller
+2015-01-19 00:44:58.122 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:58.122 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:58.135 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:58.135 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:58.135 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:58.136 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:58.145 inkapp[8595:3289360] Making a function call to getArtworksByArtist
+2015-01-19 00:44:58.145 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:58.145 inkapp[8595:3289360] Checking if data can be loaded
+2015-01-19 00:44:58.153 inkapp[8595:3289360] Callback being logged for getArtworksByArtist
+2015-01-19 00:44:58.153 inkapp[8595:3289360] Checking if data can be loaded

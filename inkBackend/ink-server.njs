@@ -205,19 +205,33 @@ sio.on('connection', socketioJwt.authorize({
 		});
 	});
 	
-	socket.on('likePost', function(artworkId){
-		db.artworks.update({
-			_id : mongojs.ObjectId(artworkId)
-		}, {
-			$addToSet: {likes : socket.decoded_token.id}
+	socket.on('likePost', function(artworkId, callback){
+		console.log("Received LIKE POST request");
+		db.artworks.findAndModify({
+			query: { _id : mongojs.ObjectId(artworkId) },
+			update: { $addToSet: {likes : socket.decoded_token.id}},
+			new: true
+	}, function(err, doc, lastErrorObject){
+		if (err) {
+			console.log(err, err.stack);
+		} else {
+			callback(doc.likes);
+		}
 		});
 	});
 	
-	socket.on('unlikePost', function(artworkId){
-		db.artworks.update({
-			_id : mongojs.ObjectId(artworkId)
-		}, {
-			$pull: {likes : socket.decoded_token.id}
+	socket.on('unlikePost', function(artworkId, callback){
+		console.log("Received UNLIKE POST request");
+		db.artworks.findAndModify({
+			query: { _id : mongojs.ObjectId(artworkId) },
+			update: { $pull: {likes : socket.decoded_token.id} },
+			new: true
+	}, function(err, doc, lastErrorObject){
+		if (err) {
+			console.log(err, err.stack);
+		} else {
+			callback(doc.likes);
+		}
 		});
 	});
 	
