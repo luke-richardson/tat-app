@@ -1,6 +1,6 @@
 angular.module('ink.directives', [])
 
-    .directive('artworkCard', function (LoginService, secureSocket) {
+    .directive('artworkCard', function (LoginService, secureSocket, $ionicTabsDelegate, $rootScope) {
 
         return {
             restrict: 'E',
@@ -10,7 +10,11 @@ angular.module('ink.directives', [])
             templateUrl: 'templates/art-card.html',
             link: function (scope, elem) {
                 console.log("LINK for art card being called");
-                scope.likedByUser = sessionStorage.getItem("myProfile") != undefined ? scope.artwork.likes.indexOf(angular.fromJson(sessionStorage.getItem("myProfile"))._id) > -1 : false;
+                LoginService.checkLoggedIn(function(profile){
+                    scope.likedByUser = scope.artwork.likes.indexOf(angular.fromJson(profile)._id) > -1;
+                }, function(){
+                    scope.likedByUser = false;
+                })
                 console.log("LikedByUser is: " + scope.likedByUser);
 
                 scope.like = function () {
@@ -25,6 +29,8 @@ angular.module('ink.directives', [])
                             scope.likedByUser = scope.artwork.likes.indexOf(profile._id) > -1;
                             console.log("New value of likedByUser is: " + scope.likedByUser);
                         });
+                    }, function(){
+                        $ionicTabsDelegate.select($rootScope.pageIndices.loginPage, true);
                     });
                 };
             }

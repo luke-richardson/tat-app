@@ -9,6 +9,7 @@ angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directiv
 
     .run(function ($ionicPlatform, $rootScope) {
         $rootScope.destination = 'http://192.168.1.73:2118/';
+        $rootScope.pageIndices = {homePage: 0, loginPage: 1};
         $ionicPlatform.ready(function () {
             console.log("STARTING THE APP");
 
@@ -52,7 +53,8 @@ angular.module('ink', ['ionic', 'ink.controllers', 'ink.services', 'ink.directiv
             .state('tab', {
                 url: "/tab",
                 abstract: true,
-                templateUrl: "templates/tabs.html"
+                templateUrl: "templates/tabs.html",
+                controller: 'MasterCtrl'
             })
 
             // Each tab has its own nav history stack:

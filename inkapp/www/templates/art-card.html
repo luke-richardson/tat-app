@@ -11,7 +11,7 @@
     </div>
     <div class="item tabs tabs-secondary tabs-icon-left">
         <div class="tab-item" ng-click="like()">
-            <i class="icon ion-thumbsup"></i>
+            <i ng-class="{ 'icon': true, 'ion-heart-broken': likedByUser == false, 'ion-heart': likedByUser == true}"></i>
             {{artwork.likes.length}}
         </div>
         <a class="tab-item" href="#">

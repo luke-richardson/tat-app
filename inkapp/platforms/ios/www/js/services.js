@@ -107,7 +107,7 @@ angular.module('ink.services', [])
         return factory;
     })
 
-    .factory('LoginService', function ($ionicPopup, $ionicTabsDelegate, socket, secureSocket) {
+    .factory('LoginService', function ($ionicPopup, $ionicTabsDelegate, socket, secureSocket, $rootScope) {
         var lgn = {};
 
         var serverAuth = function (suc) {
@@ -130,7 +130,7 @@ angular.module('ink.services', [])
                 title: 'UNSUCCESSFUL LOGIN',
                 template: 'Please try again.'
             }).then(function () {
-                $ionicTabsDelegate.select(0, true);
+                $ionicTabsDelegate.select($rootScope.pageIndices.homePage, true);
             });
         }
 
@@ -142,7 +142,8 @@ angular.module('ink.services', [])
             });
         }
 
-        var showLogin = function (suc) {
+        lgn.showLogin = function (suc) {
+            console.log("Show login invoked");
             $ionicPopup.confirm({
                 title: 'Anonymous user',
                 template: 'Please log in with Facebook'
@@ -150,23 +151,25 @@ angular.module('ink.services', [])
                 if (res) {
                     fbLogin(suc);
                 } else {
-                    $ionicTabsDelegate.select(0, true);
+                    $ionicTabsDelegate.select($rootScope.pageIndices.homePage, true);
                 }
             });
         };
 
 
-        //This ALWAYS fetches the user's profile from the server.
-        //This could be improved... but isn't super urgent I guess.
         lgn.checkLoggedIn = function (successCallback, failureCallback) {
 
             facebookConnectPlugin.getLoginStatus(function (sObj) {
+                console.log("Connected in facebook thingie")
                 if (sObj.status === 'connected') {
+                    console.log("Facebook is connected");
                     var tkn = localStorage.getItem("token");
+                    console.log("Token is: " + tkn);
+                    var storedProf = sessionStorage.getItem("myProfile");
+                    console.log("profile is: " + storedProf);
                     if (tkn === null) {
                         serverAuth(successCallback);
                     } else {
-                        var storedProf = sessionStorage.getItem("myProfile");
                         if(storedProf){
                             successCallback(angular.fromJson(storedProf));
                         }else{
@@ -181,19 +184,21 @@ angular.module('ink.services', [])
                         }
                     }
                 } else {
+                    console.log("Facebook is not connected");
                     failureCallback();
-                    showLogin(successCallback);
                 }
 
             }, function () {
                 failureCallback();
-                showLogin(successCallback);
             });
         }
 
         lgn.logOut = function () {
+            console.log("Logging out");
             localStorage.removeItem("token");
-            sessionStorage.removeItem("myProfile")
+            console.log("Token now: " + localStorage.getItem("token"));
+            sessionStorage.removeItem("myProfile");
+            console.log("Profile now: " + sessionStorage.getItem("myProfile"));
             facebookConnectPlugin.logout(function () {
                 //Success
                 console.log("Successfully logged out.");
@@ -201,7 +206,7 @@ angular.module('ink.services', [])
                 //Failure
                 console.log("Unsuccessful log out.");
             });
-            $ionicTabsDelegate.select(0, true);
+            $ionicTabsDelegate.select($rootScope.pageIndices.homePage, true);
         }
         return lgn;
 

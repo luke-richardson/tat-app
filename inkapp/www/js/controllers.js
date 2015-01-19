@@ -1,5 +1,12 @@
 angular.module('ink.controllers', [])
 
+    .controller('MasterCtrl', function($scope, $rootScope){
+        $scope.populateAccountPage = function(){
+            console.log("populateAccountPage called - fucking higher level controllery hook cunty things");
+            if($rootScope.populateAccountPage)  $rootScope.populateAccountPage();
+        }
+    })
+
     .controller('DashCtrl', function ($scope, $ionicLoading, QueryTats) {
         $scope.cards = [];
 
@@ -59,10 +66,11 @@ angular.module('ink.controllers', [])
     })
 
 
-    .controller('AccountCtrl', function ($scope, $ionicLoading, QueryTats, LoginService, secureSocket, $ionicPopup) {
+    .controller('AccountCtrl', function ($scope, $ionicLoading, QueryTats, LoginService, secureSocket, $ionicPopup, $rootScope) {
         console.log("Entering the account controller");
 
-        LoginService.checkLoggedIn(function (profile) {
+        var onSuccess = function (profile) {
+            console.log("On success being called");
             //onSuccess
             $scope.account = profile;
             $scope.avatarUploadMessage = profile.firstName + " " + profile.lastName;
@@ -87,11 +95,11 @@ angular.module('ink.controllers', [])
                     subTitle: 'Nothing too naughty',
                     scope: $scope,
                     buttons: [
-                        { text: 'Cancel' },
+                        {text: 'Cancel'},
                         {
                             text: '<b>Save</b>',
                             type: 'button-positive',
-                            onTap: function(e) {
+                            onTap: function (e) {
                                 if (!$scope.data.artistName) {
                                     e.preventDefault();
                                 } else {
@@ -100,8 +108,8 @@ angular.module('ink.controllers', [])
                             }
                         }
                     ]
-                }).then(function(res) {
-                    if(res){
+                }).then(function (res) {
+                    if (res) {
                         $scope.account.artistName = res;
                         secureSocket.emit("updateUsername", res, null);
                     }
@@ -116,11 +124,11 @@ angular.module('ink.controllers', [])
                     subTitle: 'Where are you based?',
                     scope: $scope,
                     buttons: [
-                        { text: 'Cancel' },
+                        {text: 'Cancel'},
                         {
                             text: '<b>Save</b>',
                             type: 'button-positive',
-                            onTap: function(e) {
+                            onTap: function (e) {
                                 if (!$scope.data.location) {
                                     e.preventDefault();
                                 } else {
@@ -129,22 +137,39 @@ angular.module('ink.controllers', [])
                             }
                         }
                     ]
-                }).then(function(res) {
-                    if(res){
+                }).then(function (res) {
+                    if (res) {
                         $scope.account.location = res;
                         secureSocket.emit("updateLocation", res, null);
                     }
                 });
             };
 
-        }, function () {
-            //onFailure
-            $scope.account = { "artistName": "Billy no-mates",
-                "location": "Nowhere",
-                "artistAvatar": "./img/ios7-cloud-upload.png"};
-            $scope.avatarUploadMessage = "Why don't you register an account?";
-            $scope.accountArtworks = [];
-        });
+        };
+
+        var initialised = $rootScope.populateAccountPage !== undefined;
+        console.log("Initialised is: " + initialised);
+
+        $rootScope.populateAccountPage = function(){
+            console.log("Populate page for account called");
+            LoginService.checkLoggedIn(onSuccess, function () {
+                //onFailure
+                console.log("On failure being called");
+                $scope.account = { "artistName": "Billy no-mates",
+                    "location": "Nowhere",
+                    "artistAvatar": "./img/ios7-cloud-upload.png"};
+                $scope.avatarUploadMessage = "Why don't you register an account?";
+                $scope.accountArtworks = [];
+                LoginService.showLogin(onSuccess);
+            });
+        };
+
+        $scope.populateAccountPage = $rootScope.populateAccountPage;
+
+        if(!initialised){
+            $scope.populateAccountPage();
+            initialised = true;
+        }
 
         $scope.logOut = function () {
             LoginService.logOut();
